@@ -127,6 +127,33 @@ Fill out the contact section with your relevant links, but you can remove it if 
 
 `depends`: Will be covered in a tutorial showing how to use mod libraries. You can leave it as the default for now
 
+`modid.mixins.json`: Change it to `<your_modid>.mixins.json`
+
+You will also need to rename the `modid.mixins.json file` to `<your_modid>.mixins.json`, in your `src/main/resources` folder.
+
+#### Mixin file
+
+Your `<your_modid>.mixins.json` file should look like this:
+
+```json
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "net.fabricmc.example.mixin",
+  "compatibilityLevel": "JAVA_16",
+  "mixins": [
+  ],
+  "client": [
+    "ExampleMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
+```
+
+Replace the `net.fabricmc.example` with your mod package, rename the `client` block to `server` and delete the `"ExampleMixin"` entry.
+
 #### Entrypoints
 
 Entrypoints are the classes where Fabric starts your mod - a piece of code that runs on game launch. More information can be found on the [fabric wiki page](https://fabricmc.net/wiki/documentation:entrypoint).

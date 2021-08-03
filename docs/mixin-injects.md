@@ -26,6 +26,10 @@ This tells the compiler that this is a mixin class, targeting the class `net.min
 
 We then have a method with the same arguments as our target method, plus a `CallbackInfo` object.
 
+#### Registering Mixins
+
+When you add a mixin, you must put the mixin class in `your_package.mixin`. Then, you should add an entry to the `server` array in your `<your_modid>.mixins.json` file with the name of your mixin class.
+
 ### Fabric Wiki
 
 Confused? The fabric wiki has a [very extensive guide to mixins](https://fabricmc.net/wiki/tutorial:mixin_introduction)
