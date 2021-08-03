@@ -4,6 +4,7 @@ nav:
   - index.md
   - setup.md
   - events.md
+  - mixin-injects.md
 
 theme:
   name: material
