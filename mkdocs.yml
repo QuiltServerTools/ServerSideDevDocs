@@ -3,6 +3,7 @@ site_name: Server-side Development
 nav:
   - index.md
   - setup.md
+  - events.md
 
 theme:
   name: material

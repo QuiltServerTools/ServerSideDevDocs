@@ -129,6 +129,8 @@ Fill out the contact section with your relevant links, but you can remove it if 
 
 #### Entrypoints
 
+Entrypoints are the classes where Fabric starts your mod - a piece of code that runs on game launch. More information can be found on the [fabric wiki page](https://fabricmc.net/wiki/documentation:entrypoint).
+
 ##### Dedicated only
 
 Change the `main` entry in your `entrypoints` section to `server`
