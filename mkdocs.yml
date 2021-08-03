@@ -1,1 +1,28 @@
 site_name: Server-side Development
+
+nav:
+  - index.md
+  - setup.md
+
+theme:
+  name: material
+  favicon: assets/Ledger-smol.svg
+  features:
+  icon:
+    repo: fontawesome/brands/github
+  palette:
+    - media: "(prefers-color-scheme: dark)"
+      primary: slate gray
+      scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: dark)"
+      primary: slate gray
+      scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+
+plugins:
+  - search
