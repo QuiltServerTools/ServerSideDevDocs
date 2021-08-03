@@ -287,6 +287,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#registering-mixins" class="md-nav__link">
+    Registering Mixins
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#fabric-wiki" class="md-nav__link">
     Fabric Wiki
   </a>
@@ -354,6 +361,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#registering-mixins" class="md-nav__link">
+    Registering Mixins
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#fabric-wiki" class="md-nav__link">
     Fabric Wiki
   </a>
@@ -409,6 +423,8 @@ public class MixinBlock {
 <p><code>@Inject(at = @At("HEAD"), method = "onBreak")</code></p>
 <p><code>@Inject</code> is a mixin annotation. It tells the mixin compiler to "inject" the logic in our method to the part of the method <code>onBreak</code> specified by the <code>at</code> argument. <code>@At("HEAD")</code> refers to the top of the method target; the first bit of code to be run when that method is called.</p>
 <p>We then have a method with the same arguments as our target method, plus a <code>CallbackInfo</code> object.</p>
+<h4 id="registering-mixins">Registering Mixins</h4>
+<p>When you add a mixin, you must put the mixin class in <code>your_package.mixin</code>. Then, you should add an entry to the <code>server</code> array in your <code>&lt;your_modid&gt;.mixins.json</code> file with the name of your mixin class.</p>
 <h3 id="fabric-wiki">Fabric Wiki</h3>
 <p>Confused? The fabric wiki has a <a href="https://fabricmc.net/wiki/tutorial:mixin_introduction">very extensive guide to mixins</a></p>
 <h3 id="mixin-cheatsheet">Mixin cheatsheet</h3>

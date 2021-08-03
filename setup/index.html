@@ -286,6 +286,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#mixin-file" class="md-nav__link">
+    Mixin file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#entrypoints" class="md-nav__link">
     Entrypoints
   </a>
@@ -421,6 +428,13 @@
   
     <nav class="md-nav" aria-label="Fabric setup">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mixin-file" class="md-nav__link">
+    Mixin file
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#entrypoints" class="md-nav__link">
@@ -567,6 +581,26 @@ org.gradle.jvmargs=-Xmx1G
 <p><code>environment</code>: Leave at <code>*</code> if you want your mod to work on singleplayer (might cause issues), otherwise change it to <code>server</code></p>
 <p><code>suggests</code>: Feel free to remove this section</p>
 <p><code>depends</code>: Will be covered in a tutorial showing how to use mod libraries. You can leave it as the default for now</p>
+<p><code>modid.mixins.json</code>: Change it to <code>&lt;your_modid&gt;.mixins.json</code></p>
+<p>You will also need to rename the <code>modid.mixins.json file</code> to <code>&lt;your_modid&gt;.mixins.json</code>, in your <code>src/main/resources</code> folder.</p>
+<h4 id="mixin-file">Mixin file</h4>
+<p>Your <code>&lt;your_modid&gt;.mixins.json</code> file should look like this:</p>
+<pre><code class="language-json">{
+  &quot;required&quot;: true,
+  &quot;minVersion&quot;: &quot;0.8&quot;,
+  &quot;package&quot;: &quot;net.fabricmc.example.mixin&quot;,
+  &quot;compatibilityLevel&quot;: &quot;JAVA_16&quot;,
+  &quot;mixins&quot;: [
+  ],
+  &quot;client&quot;: [
+    &quot;ExampleMixin&quot;
+  ],
+  &quot;injectors&quot;: {
+    &quot;defaultRequire&quot;: 1
+  }
+}
+</code></pre>
+<p>Replace the <code>net.fabricmc.example</code> with your mod package, rename the <code>client</code> block to <code>server</code> and delete the <code>"ExampleMixin"</code> entry.</p>
 <h4 id="entrypoints">Entrypoints</h4>
 <p>Entrypoints are the classes where Fabric starts your mod - a piece of code that runs on game launch. More information can be found on the <a href="https://fabricmc.net/wiki/documentation:entrypoint">fabric wiki page</a>.</p>
 <h5 id="dedicated-only">Dedicated only</h5>
