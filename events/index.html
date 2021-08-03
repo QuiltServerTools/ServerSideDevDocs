@@ -9,19 +9,19 @@
       
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.2">
     
     
       
-        <title>Server-side Development</title>
+        <title>Events - Server-side Development</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.1118c9be.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.1118c9be.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.ba0d045b.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ba0d045b.min.css">
         
       
     
@@ -55,7 +55,7 @@
     <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="slate-gray" data-md-color-accent="">
   
     
-    <script>function __prefix(e){return new URL(".",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
     
       <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
     
@@ -65,7 +65,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#server-side-developer-documentation-for-fabric" class="md-skip">
+        <a href="#events" class="md-skip">
           Skip to content
         </a>
       
@@ -76,7 +76,7 @@
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="Server-side Development" class="md-header__button md-logo" aria-label="Server-side Development" data-md-component="logo">
+    <a href=".." title="Server-side Development" class="md-header__button md-logo" aria-label="Server-side Development" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Server-side Developer Documentation for Fabric
+              Events
             
           </span>
         </div>
@@ -182,7 +182,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Server-side Development" class="md-nav__button md-logo" aria-label="Server-side Development" data-md-component="logo">
+    <a href=".." title="Server-side Development" class="md-nav__button md-logo" aria-label="Server-side Development" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -192,6 +192,36 @@
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Server-side Developer Documentation for Fabric
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setup/" class="md-nav__link">
+        Setup
+      </a>
+    </li>
+  
+
     
       
       
@@ -210,40 +240,67 @@
         
       
       
-      <a href="." class="md-nav__link md-nav__link--active">
-        Server-side Developer Documentation for Fabric
-      </a>
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Events
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="setup/" class="md-nav__link">
-        Setup
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="events/" class="md-nav__link">
+      <a href="./" class="md-nav__link md-nav__link--active">
         Events
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#registering-the-callback" class="md-nav__link">
+    Registering the callback
+  </a>
+  
+    <nav class="md-nav" aria-label="Registering the callback">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-minecraftserver" class="md-nav__link">
+    What is MinecraftServer?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#more-uses-of-events" class="md-nav__link">
+    More uses of events
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fabric-wiki" class="md-nav__link">
+    Fabric Wiki
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -267,6 +324,48 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#registering-the-callback" class="md-nav__link">
+    Registering the callback
+  </a>
+  
+    <nav class="md-nav" aria-label="Registering the callback">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-minecraftserver" class="md-nav__link">
+    What is MinecraftServer?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#more-uses-of-events" class="md-nav__link">
+    More uses of events
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fabric-wiki" class="md-nav__link">
+    Fabric Wiki
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -278,8 +377,54 @@
               
                 
                 
-                <h1 id="server-side-developer-documentation-for-fabric">Server-side Developer Documentation for Fabric</h1>
-<p>Documentation for server-side modding with fabric</p>
+                <h1 id="events">Events</h1>
+<p>Events provide a way of running code when a certain action happens</p>
+<p>Fabric's API has the following groups of events:</p>
+<ul>
+<li><a href="https://github.com/FabricMC/fabric/tree/1.17/fabric-lifecycle-events-v1/src/main/java/net/fabricmc/fabric/api/event/lifecycle/v1">Lifecycle events</a></li>
+<li><a href="https://github.com/FabricMC/fabric/tree/1.17/fabric-events-interaction-v0/src/main/java/net/fabricmc/fabric/api/event/player">Interaction events</a></li>
+<li><a href="https://github.com/FabricMC/fabric/blob/1.17/fabric-networking-api-v1/src/main/java/net/fabricmc/fabric/api/networking/v1/ServerPlayConnectionEvents.java">Networking events</a></li>
+</ul>
+<p>For this example, we will use the lifecycle events module.</p>
+<h2 id="registering-the-callback">Registering the callback</h2>
+<p>When you want to listen for an event, you register a bit of code that will run whenever the event is triggered.</p>
+<p>Listening for the server starting event would be as follows:</p>
+<pre><code class="language-java">public class MyMod implements DedicatedServerModInitializer {
+    @Override
+    public void onInitializeServer() {
+        ServerLifecycleEvents.SERVER_STARTING.register(server -&gt; {
+           System.out.println(&quot;SERVER STARTING&quot;); 
+        });
+    }
+}
+</code></pre>
+<p>The server starting event is defined within <code>ServerLifecycleEvents</code> in a field named <code>SERVER_STARTING</code>. We then register using the <code>SERVER_STARTING</code> event, which requires a lambda expression with a single <code>MinecraftServer</code> parameter.</p>
+<h3 id="what-is-minecraftserver">What is <code>MinecraftServer</code>?</h3>
+<p>If you have ever written a plugin for the Bukkit API, you will know that you interact with the API, not the game. This is not the case on Fabric. <code>MinecraftServer</code> is the name of the class that is, well, the Minecraft Server in use at the time. As you progress through this guide, we will show you many of the methods that this class contains. However, as the is so much in this class, we will not be able to cover all of its features - and this is a recurring theme. For this reason, if you are looking for something, IDE tab completion will be your friend. If you ever have issues, you can ask on the <a href="https://discord.gg/HU7JVxpVRS">Fabric Server-side Development Discord server</a>. The simplest way to put it is: you will know how to do more the more time you spend playing around.</p>
+<h3 id="more-uses-of-events">More uses of events</h3>
+<p>You can register events anywhere, and have whatever logic you want run when they are called. Let's look at a more complex example.</p>
+<pre><code class="language-java">public class MyMod implements DedicatedServerModInitializer {
+    @Override
+    public void onInitializeServer() {
+        registerServerStarted();
+        ServerLifecycleEvents.SERVER_STOPPING.register(server -&gt; onServerStop(server));
+    }
+
+    public void registerServerStarted() {
+        ServerLifecycleEvents.SERVER_STARTED.register(server -&gt; {
+            if (server.getPlayerManager().getPlayerList().isEmpty()) {
+                System.out.println(&quot;SERVER STARTING&quot;);
+            }
+        });
+    }
+
+    private void onServerStop(MinecraftServer server) {
+        System.out.println(&quot;SERVER STOPPING&quot;);
+    }
+}
+</code></pre>
+<h2 id="fabric-wiki">Fabric Wiki</h2>
+<p>This page also has an <a href="https://fabricmc.net/wiki/tutorial:callbacks">alternative on the Fabric wiki</a>, although it is very out of date.</p>
                 
               
               
@@ -298,21 +443,21 @@
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-      
         
-        <a href="setup/" class="md-footer__link md-footer__link--next" aria-label="Next: Setup" rel="next">
+        <a href="../setup/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Setup" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
-                Next
+                Previous
               </span>
               Setup
             </div>
           </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-          </div>
         </a>
+      
       
     </nav>
   
@@ -335,10 +480,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": ".", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.2b46852b.min.js"></script>
+      <script src="../assets/javascripts/bundle.2b46852b.min.js"></script>
       
     
   </body>
