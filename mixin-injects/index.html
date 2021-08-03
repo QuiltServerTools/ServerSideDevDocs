@@ -14,7 +14,7 @@
     
     
       
-        <title>Events - Server-side Development</title>
+        <title>Mixin Injects - Server-side Development</title>
       
     
     
@@ -65,7 +65,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#events" class="md-skip">
+        <a href="#mixin-injects" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Events
+              Mixin Injects
             
           </span>
         </div>
@@ -229,6 +229,21 @@
 
   
   
+  
+    <li class="md-nav__item">
+      <a href="../events/" class="md-nav__link">
+        Events
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
     
   
   
@@ -241,12 +256,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Events
+          Mixin Injects
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Events
+        Mixin Injects
       </a>
       
         
@@ -264,23 +279,30 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#registering-the-callback" class="md-nav__link">
-    Registering the callback
+  <a href="#mixin-triggered-whenever-a-block-is-broken" class="md-nav__link">
+    Mixin triggered whenever a block is broken
   </a>
   
-    <nav class="md-nav" aria-label="Registering the callback">
+    <nav class="md-nav" aria-label="Mixin triggered whenever a block is broken">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#what-is-minecraftserver" class="md-nav__link">
-    What is MinecraftServer?
+  <a href="#fabric-wiki" class="md-nav__link">
+    Fabric Wiki
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#more-uses-of-events" class="md-nav__link">
-    More uses of events
+  <a href="#mixin-cheatsheet" class="md-nav__link">
+    Mixin cheatsheet
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#game-code-used-in-the-example" class="md-nav__link">
+    Game code used in the example
   </a>
   
 </li>
@@ -290,32 +312,10 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#fabric-wiki" class="md-nav__link">
-    Fabric Wiki
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
       
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../mixin-injects/" class="md-nav__link">
-        Mixin Injects
-      </a>
     </li>
   
 
@@ -346,36 +346,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#registering-the-callback" class="md-nav__link">
-    Registering the callback
+  <a href="#mixin-triggered-whenever-a-block-is-broken" class="md-nav__link">
+    Mixin triggered whenever a block is broken
   </a>
   
-    <nav class="md-nav" aria-label="Registering the callback">
+    <nav class="md-nav" aria-label="Mixin triggered whenever a block is broken">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#what-is-minecraftserver" class="md-nav__link">
-    What is MinecraftServer?
+  <a href="#fabric-wiki" class="md-nav__link">
+    Fabric Wiki
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#more-uses-of-events" class="md-nav__link">
-    More uses of events
+  <a href="#mixin-cheatsheet" class="md-nav__link">
+    Mixin cheatsheet
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#game-code-used-in-the-example" class="md-nav__link">
+    Game code used in the example
   </a>
   
 </li>
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#fabric-wiki" class="md-nav__link">
-    Fabric Wiki
-  </a>
   
 </li>
       
@@ -392,54 +392,31 @@
               
                 
                 
-                <h1 id="events">Events</h1>
-<p>Events provide a way of running code when a certain action happens</p>
-<p>Fabric's API has the following groups of events:</p>
-<ul>
-<li><a href="https://github.com/FabricMC/fabric/tree/1.17/fabric-lifecycle-events-v1/src/main/java/net/fabricmc/fabric/api/event/lifecycle/v1">Lifecycle events</a></li>
-<li><a href="https://github.com/FabricMC/fabric/tree/1.17/fabric-events-interaction-v0/src/main/java/net/fabricmc/fabric/api/event/player">Interaction events</a></li>
-<li><a href="https://github.com/FabricMC/fabric/blob/1.17/fabric-networking-api-v1/src/main/java/net/fabricmc/fabric/api/networking/v1/ServerPlayConnectionEvents.java">Networking events</a></li>
-</ul>
-<p>For this example, we will use the lifecycle events module.</p>
-<h2 id="registering-the-callback">Registering the callback</h2>
-<p>When you want to listen for an event, you register a bit of code that will run whenever the event is triggered.</p>
-<p>Listening for the server starting event would be as follows:</p>
-<pre><code class="language-java">public class MyMod implements DedicatedServerModInitializer {
-    @Override
-    public void onInitializeServer() {
-        ServerLifecycleEvents.SERVER_STARTING.register(server -&gt; {
-           System.out.println(&quot;SERVER STARTING&quot;); 
-        });
+                <h1 id="mixin-injects">Mixin Injects</h1>
+<p>Mixin is a powerful tool used for bytecode transformation - specifically modifying the Minecraft source code in a way that prevents as many conflicts as possible between mods. Let's take a look at an example.</p>
+<h2 id="mixin-triggered-whenever-a-block-is-broken">Mixin triggered whenever a block is broken</h2>
+<pre><code class="language-java">@Mixin(Block.class)
+public class MixinBlock {
+    @Inject(at = @At(&quot;HEAD&quot;), method = &quot;onBreak&quot;)
+    public void onBreak(World world, BlockPos pos, BlockState state, PlayerEntity player, CallbackInfo info) {
+        player.sendMessage(new LiteralText(&quot;You broke &quot; + Registry.BLOCK.getId(state.getBlock())), false);
     }
 }
 </code></pre>
-<p>The server starting event is defined within <code>ServerLifecycleEvents</code> in a field named <code>SERVER_STARTING</code>. We then register using the <code>SERVER_STARTING</code> event, which requires a lambda expression with a single <code>MinecraftServer</code> parameter.</p>
-<h3 id="what-is-minecraftserver">What is <code>MinecraftServer</code>?</h3>
-<p>If you have ever written a plugin for the Bukkit API, you will know that you interact with the API, not the game. This is not the case on Fabric. <code>MinecraftServer</code> is the name of the class that is, well, the Minecraft Server in use at the time. As you progress through this guide, we will show you many of the methods that this class contains. However, as the is so much in this class, we will not be able to cover all of its features - and this is a recurring theme. For this reason, if you are looking for something, IDE tab completion will be your friend. If you ever have issues, you can ask on the <a href="https://discord.gg/HU7JVxpVRS">Fabric Server-side Development Discord server</a>. The simplest way to put it is: you will know how to do more the more time you spend playing around.</p>
-<h3 id="more-uses-of-events">More uses of events</h3>
-<p>You can register events anywhere, and have whatever logic you want run when they are called. Let's look at a more complex example.</p>
-<pre><code class="language-java">public class MyMod implements DedicatedServerModInitializer {
-    @Override
-    public void onInitializeServer() {
-        registerServerStarted();
-        ServerLifecycleEvents.SERVER_STOPPING.register(server -&gt; onServerStop(server));
-    }
-
-    public void registerServerStarted() {
-        ServerLifecycleEvents.SERVER_STARTED.register(server -&gt; {
-            if (server.getPlayerManager().getPlayerList().isEmpty()) {
-                System.out.println(&quot;SERVER STARTING&quot;);
-            }
-        });
-    }
-
-    private void onServerStop(MinecraftServer server) {
-        System.out.println(&quot;SERVER STOPPING&quot;);
-    }
-}
-</code></pre>
-<h2 id="fabric-wiki">Fabric Wiki</h2>
-<p>This page also has an <a href="https://fabricmc.net/wiki/tutorial:callbacks">alternative on the Fabric wiki</a>, although it is very out of date.</p>
+<p>This is considerably more complex than anything shown so far. But what does it do?</p>
+<p><code>@Mixin(Block.class)</code></p>
+<p>This tells the compiler that this is a mixin class, targeting the class <code>net.minecraft.block.Block</code>.</p>
+<p><code>@Inject(at = @At("HEAD"), method = "onBreak")</code></p>
+<p><code>@Inject</code> is a mixin annotation. It tells the mixin compiler to "inject" the logic in our method to the part of the method <code>onBreak</code> specified by the <code>at</code> argument. <code>@At("HEAD")</code> refers to the top of the method target; the first bit of code to be run when that method is called.</p>
+<p>We then have a method with the same arguments as our target method, plus a <code>CallbackInfo</code> object.</p>
+<h3 id="fabric-wiki">Fabric Wiki</h3>
+<p>Confused? The fabric wiki has a <a href="https://fabricmc.net/wiki/tutorial:mixin_introduction">very extensive guide to mixins</a></p>
+<h3 id="mixin-cheatsheet">Mixin cheatsheet</h3>
+<p>The <a href="https://github.com/2xsaiko/mixin-cheatsheet">Mixin cheatsheet</a> has guides and examples for every type of mixin. If you want to learn how to do more than injecting at the top of a method, I would advise checking it out.</p>
+<h3 id="game-code-used-in-the-example">Game code used in the example</h3>
+<p><code>LiteralText</code>: <code>new LiteralText(String text)</code> - this creates a <code>Text</code> object with the value of the string passed. </p>
+<p><code>Text</code>: a class representing a message that can be sent to a player through chat. Contains colour information, the string literal, or potentially a translation key.</p>
+<p><code>PlayerEntity#sendMessage(Text text, boolean actionBar)</code>: Sends the player a message with the text component provided in the arguments. <code>actionBar</code> should nearly always be false</p>
                 
               
               
@@ -459,7 +436,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../setup/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Setup" rel="prev">
+        <a href="../events/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Events" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -468,26 +445,11 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Setup
+              Events
             </div>
           </div>
         </a>
       
-      
-        
-        <a href="../mixin-injects/" class="md-footer__link md-footer__link--next" aria-label="Next: Mixin Injects" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Mixin Injects
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-          </div>
-        </a>
       
     </nav>
   
