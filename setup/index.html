@@ -1,0 +1,613 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.2">
+    
+    
+      
+        <title>Setup - Server-side Development</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.1118c9be.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ba0d045b.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="slate-gray" data-md-color-accent="">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+      <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#setup" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Server-side Development" class="md-header__button md-logo" aria-label="Server-side Development" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Server-side Development
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Setup
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="slate-gray" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="default" data-md-color-primary="slate-gray" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Server-side Development" class="md-nav__button md-logo" aria-label="Server-side Development" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Server-side Development
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Server-side Developer Documentation for Fabric
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Setup
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Setup
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#download" class="md-nav__link">
+    Download
+  </a>
+  
+    <nav class="md-nav" aria-label="Download">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#note-about-the-minecraft-development-plugin" class="md-nav__link">
+    Note about the Minecraft Development Plugin
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#initialise-your-mod" class="md-nav__link">
+    Initialise your mod
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fabric-setup" class="md-nav__link">
+    Fabric setup
+  </a>
+  
+    <nav class="md-nav" aria-label="Fabric setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#entrypoints" class="md-nav__link">
+    Entrypoints
+  </a>
+  
+    <nav class="md-nav" aria-label="Entrypoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dedicated-only" class="md-nav__link">
+    Dedicated only
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-configurations" class="md-nav__link">
+    Run configurations
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#download" class="md-nav__link">
+    Download
+  </a>
+  
+    <nav class="md-nav" aria-label="Download">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#note-about-the-minecraft-development-plugin" class="md-nav__link">
+    Note about the Minecraft Development Plugin
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#initialise-your-mod" class="md-nav__link">
+    Initialise your mod
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fabric-setup" class="md-nav__link">
+    Fabric setup
+  </a>
+  
+    <nav class="md-nav" aria-label="Fabric setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#entrypoints" class="md-nav__link">
+    Entrypoints
+  </a>
+  
+    <nav class="md-nav" aria-label="Entrypoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dedicated-only" class="md-nav__link">
+    Dedicated only
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-configurations" class="md-nav__link">
+    Run configurations
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="setup">Setup</h1>
+<h3 id="prerequisites">Prerequisites</h3>
+<p>You will need:</p>
+<ul>
+<li>Java Development Kit Version 16 or newer</li>
+<li>IntelliJ IDEA</li>
+<li>Intermediate Java knowledge</li>
+<li>Git and basic git experience</li>
+<li>The Minecraft Development plugin for IntelliJ</li>
+<li>Basic JSON knowledge</li>
+</ul>
+<hr />
+<h2 id="download">Download</h2>
+<p>Create a new repository, either locally or on GitHub/GitLab. If you did not create it locally, go to <code>file -&gt; new from version control</code> and clone the repo</p>
+<p>Download the code from the <a href="https://github.com/fabricmc/fabric-example-mod">Fabric example mod repo</a>. You will then need to copy the contents into your repository folder.</p>
+<h3 id="note-about-the-minecraft-development-plugin">Note about the Minecraft Development Plugin</h3>
+<p>While you can handle the initial setup with the plugin, it has major bugs when it comes to 1.17 mod setup. You will also gain experience with Gradle and Loom this way</p>
+<hr />
+<h3 id="initialise-your-mod">Initialise your mod</h3>
+<p>First, open up the <code>gradle.properties</code> file within IntelliJ. It will look something like this:</p>
+<pre><code class="language-properties"># Done to increase the memory available to gradle.
+org.gradle.jvmargs=-Xmx1G
+
+# Fabric Properties
+    # check these on https://fabricmc.net/versions.html
+    minecraft_version=1.17.1
+    yarn_mappings=1.17.1+build.14
+    loader_version=0.11.6
+
+# Mod Properties
+    mod_version = 1.0.0
+    maven_group = com.example
+    archives_base_name = fabric-example-mod
+
+# Dependencies
+    fabric_version=0.37.0+1.17
+</code></pre>
+<p>First, you want to delete the dependencies section of your <code>gradle.properties</code> file.</p>
+<p>Open up the <a href="https://fabricmc.net/versions.html">fabric versions page</a> in your browser.</p>
+<p>Replace your <code># Fabric Properties</code> section with the <code>gradle.properties</code> values found on the versions page.</p>
+<p>Next, you need to set your mod information. </p>
+<p>Set <code>maven_group</code> to <code>io.github.yourusername</code> and set <code>archives_base_name</code> to the name of your mod, in lower-case letters and without spaces</p>
+<hr />
+<h3 id="fabric-setup">Fabric setup</h3>
+<p>Now we have our Gradle set up, you will need to tell fabric about your mod. Navigate to your <code>fabric.mod.json</code> file found under <code>src/main/resources</code></p>
+<p>It will look something like this:</p>
+<pre><code class="language-json">{
+  &quot;schemaVersion&quot;: 1,
+  &quot;id&quot;: &quot;modid&quot;,
+  &quot;version&quot;: &quot;${version}&quot;,
+
+  &quot;name&quot;: &quot;Example Mod&quot;,
+  &quot;description&quot;: &quot;This is an example description! Tell everyone what your mod is about!&quot;,
+  &quot;authors&quot;: [
+    &quot;Me!&quot;
+  ],
+  &quot;contact&quot;: {
+    &quot;homepage&quot;: &quot;https://fabricmc.net/&quot;,
+    &quot;sources&quot;: &quot;https://github.com/FabricMC/fabric-example-mod&quot;
+  },
+
+  &quot;license&quot;: &quot;CC0-1.0&quot;,
+  &quot;icon&quot;: &quot;assets/modid/icon.png&quot;,
+
+  &quot;environment&quot;: &quot;*&quot;,
+  &quot;entrypoints&quot;: {
+    &quot;main&quot;: [
+      &quot;net.fabricmc.example.ExampleMod&quot;
+    ]
+  },
+  &quot;mixins&quot;: [
+    &quot;modid.mixins.json&quot;
+  ],
+
+  &quot;depends&quot;: {
+    &quot;fabricloader&quot;: &quot;&gt;=0.11.3&quot;,
+    &quot;fabric&quot;: &quot;*&quot;,
+    &quot;minecraft&quot;: &quot;1.17.x&quot;,
+    &quot;java&quot;: &quot;&gt;=16&quot;
+  },
+  &quot;suggests&quot;: {
+    &quot;another-mod&quot;: &quot;*&quot;
+  }
+}
+</code></pre>
+<p>This files holds all the metadata about our mod, which Fabric uses to load the mod. Here is a list of fields and what you should change them to:</p>
+<p><code>id</code>: The same value as you put for <code>archives_base_name</code> in <code>gradle.properties</code>.</p>
+<p><code>name</code>: The formatted name of your mod. This can include spaces and capital letters.</p>
+<p><code>description</code>: A short, formatted description of your mod</p>
+<p><code>authors</code>: <code>[ "your_username" ]</code></p>
+<p>Fill out the contact section with your relevant links, but you can remove it if you would like.</p>
+<p><code>license</code>: The name and potentially version of the license of your choice. Although we strongly discourage keeping mods closed source, you may indicate this by omitting the field.</p>
+<p><code>environment</code>: Leave at <code>*</code> if you want your mod to work on singleplayer (might cause issues), otherwise change it to <code>server</code></p>
+<p><code>suggests</code>: Feel free to remove this section</p>
+<p><code>depends</code>: Will be covered in a tutorial showing how to use mod libraries. You can leave it as the default for now</p>
+<h4 id="entrypoints">Entrypoints</h4>
+<h5 id="dedicated-only">Dedicated only</h5>
+<p>Change the <code>main</code> entry in your <code>entrypoints</code> section to <code>server</code></p>
+<hr />
+<p>You must now determine your package. This will most likely be the <code>maven_group</code> value from your <code>gradle.properties</code>, but with the name of your main class appended. An example would be: <code>io.github.username.modname.ModName</code>.</p>
+<p>After specifying this value, we now need to actually create the entrypoint. Delete the <code>net</code> folder found under <code>src/main/java</code>.</p>
+<p>Create a folder structure with your package, within the <code>src/main/java</code> directory. <code>io.github.username.modname</code> would become <code>io/github/username/modname</code>.</p>
+<p>Once you have created this folder, right click it in IntelliJ and press "Create Java class". The class name should be the value after your package specified in the entrypoints section. In the example case, it would be <code>ModName</code>.</p>
+<p>Just one more step now - we need to get Fabric to recognise our main class. Make the class you just created implement <code>DedicatedServerModInitializer</code> if you are dedicated server only, or <code>ModInitializer</code> if you support singleplayer. Add <code>System.out.println("MOD LOADED")</code> to the overridden method IntelliJ should prompt you to make. </p>
+<h4 id="run-configurations">Run configurations</h4>
+<p>Go to the top right-hand corner of IntelliJ, press "Add Configuration", then under "application" you will find <code>Minecraft Server</code>. Select that and press debug. You will need to agree to the EULA, but if all goes well your mod has been loaded!</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: Server-side Developer Documentation for Fabric" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Server-side Developer Documentation for Fabric
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.2b46852b.min.js"></script>
+      
+    
+  </body>
+</html>
