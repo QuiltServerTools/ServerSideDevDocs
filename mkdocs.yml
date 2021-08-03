@@ -6,7 +6,6 @@ nav:
 
 theme:
   name: material
-  favicon: assets/Ledger-smol.svg
   features:
   icon:
     repo: fontawesome/brands/github
