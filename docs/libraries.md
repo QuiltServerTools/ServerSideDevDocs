@@ -54,6 +54,8 @@ Add the following line in the block:
 
 This will tell Gradle to add our library and when you export your mod, it will add the library inside the produced jar file. If your library is a mod which is intended to be downloaded on its own, such as fabric-language-kotlin, you should exclude the `include()` block.
 
+In the case of Luckperms, we need to add `modImplementation(include('me.lucko:fabric-permissions-api:0.1-SNAPSHOT'))`
+
 #### Non-Mod Libraries or APIs
 
 Find the `dependencies` block in your `build.gradle`:

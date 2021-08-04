@@ -6,7 +6,7 @@ Commands are Minecraft's way of handling text-based user input outside of standa
 
 ## Registering a command
 
-In order to register commands, we first need to listen to Fabric API's command registration event.
+In order to register commands, we first need to listen for Fabric API's command registration event.
 
 ```java
 public class MyCommandsMod implements DedicatedServerModInitializer {
@@ -103,7 +103,7 @@ We add the next part of the command, a string literal with the value `subcommand
 
 ### Formatting of commands
 
-It's suggested to indent your commands in a way that the various commands and arguments are clearly visible at a glance. IntelliJ autoformatting (CTRL+ALT+L) will help with this.
+It's suggested to indent your commands in a way that the various commands and arguments are clearly visible at a glance. IntelliJ's autoformatting tool (CTRL+ALT+L) will help with this.
 
 ---
 
