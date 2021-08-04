@@ -4,7 +4,7 @@ This tutorial shows how to handle and check permissions.
 
 ## Setup
 
-You will need to have set up the Luckperms Permissions API in your environment. See the [libraries page](libaries.md)
+You will need to have set up the Luckperms Permissions API in your environment. See the [libraries page](libraries.md)
 
 ---
 
