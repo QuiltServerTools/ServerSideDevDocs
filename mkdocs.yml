@@ -36,8 +36,8 @@ extra:
       link: https://github.com/quiltservertools/serversidedevdocs
       name: GitHub
     - icon: fontawesome/brands/discord
-        link: https://discord.gg/TB8455aGuu
-        name: Server-side Development Discord
+      link: https://discord.gg/TB8455aGuu
+      name: Server-side Development Discord
     - icon: fontawesome/brands/discord
       link: https://discord.gg/FpRNYrQaGP
       name: QuiltServerTools Discord
