@@ -177,3 +177,8 @@ Just one more step now - we need to get Fabric to recognise our main class. Make
 #### Run configurations
 
 Go to the top right-hand corner of IntelliJ, press "Add Configuration", then under "application" you will find `Minecraft Server`. Select that and press debug. You will need to agree to the EULA, but if all goes well your mod has been loaded!
+
+
+## Export
+
+In the Gradle tab, choose `build`. You want the jar without `-dev` or `-sources` found in `build/libs`
