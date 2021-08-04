@@ -512,6 +512,7 @@
 <p>Add the following line in the block:</p>
 <p><code>modImplementation(include("library.package:library-name:library-version"))</code></p>
 <p>This will tell Gradle to add our library and when you export your mod, it will add the library inside the produced jar file. If your library is a mod which is intended to be downloaded on its own, such as fabric-language-kotlin, you should exclude the <code>include()</code> block.</p>
+<p>In the case of Luckperms, we need to add <code>modImplementation(include('me.lucko:fabric-permissions-api:0.1-SNAPSHOT'))</code></p>
 <h4 id="non-mod-libraries-or-apis">Non-Mod Libraries or APIs</h4>
 <p>Find the <code>dependencies</code> block in your <code>build.gradle</code>:</p>
 <pre><code class="language-groovy">dependencies {

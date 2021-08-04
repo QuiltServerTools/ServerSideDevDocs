@@ -481,7 +481,7 @@
 <p>Commands are Minecraft's way of handling text-based user input outside of standard gameplay</p>
 <hr />
 <h2 id="registering-a-command">Registering a command</h2>
-<p>In order to register commands, we first need to listen to Fabric API's command registration event.</p>
+<p>In order to register commands, we first need to listen for Fabric API's command registration event.</p>
 <pre><code class="language-java">public class MyCommandsMod implements DedicatedServerModInitializer {
     @Override
     public void onInitializeServer() {
@@ -547,7 +547,7 @@
 </code></pre>
 <p><code>.executes</code> tells Minecraft to run the lambda block provided, taking one lambda parameter: an object of type <code>CommandContext&lt;ServerCommandSource&gt;</code>. It requires an integer to be returned.</p>
 <h3 id="formatting-of-commands">Formatting of commands</h3>
-<p>It's suggested to indent your commands in a way that the various commands and arguments are clearly visible at a glance. IntelliJ autoformatting (CTRL+ALT+L) will help with this.</p>
+<p>It's suggested to indent your commands in a way that the various commands and arguments are clearly visible at a glance. IntelliJ's autoformatting tool (CTRL+ALT+L) will help with this.</p>
 <hr />
 <h2 id="non-string-literal-arguments">Non-String-Literal arguments</h2>
 <p>String literals provide an excellent way to tell the game which command you are running, as you wouldn't type <code>/minecraft:overworld</code>. We do however want users to be able to enter their own information. Let's take a look at Mojang provided argument types.</p>
