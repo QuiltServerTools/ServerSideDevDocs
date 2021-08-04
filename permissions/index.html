@@ -14,7 +14,7 @@
     
     
       
-        <title>Mixin Injects - Server-side Development</title>
+        <title>Permissions - Server-side Development</title>
       
     
     
@@ -65,7 +65,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#mixin-injects" class="md-skip">
+        <a href="#permissions" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Mixin Injects
+              Permissions
             
           </span>
         </div>
@@ -274,21 +274,6 @@
 
   
   
-  
-    <li class="md-nav__item">
-      <a href="../permissions/" class="md-nav__link">
-        Permissions
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
     
   
   
@@ -301,12 +286,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Mixin Injects
+          Permissions
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Mixin Injects
+        Permissions
       </a>
       
         
@@ -324,37 +309,57 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#mixin-triggered-whenever-a-block-is-broken" class="md-nav__link">
-    Mixin triggered whenever a block is broken
+  <a href="#setup" class="md-nav__link">
+    Setup
   </a>
   
-    <nav class="md-nav" aria-label="Mixin triggered whenever a block is broken">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#command-permissions" class="md-nav__link">
+    Command Permissions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#permission-levels" class="md-nav__link">
+    Permission Levels
+  </a>
+  
+    <nav class="md-nav" aria-label="Permission Levels">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#registering-mixins" class="md-nav__link">
-    Registering Mixins
+  <a href="#what-do-the-levels-allow" class="md-nav__link">
+    What do the levels allow?
   </a>
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#fabric-wiki" class="md-nav__link">
-    Fabric Wiki
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set-a-commands-permission-level" class="md-nav__link">
+    Set a Command's Permission Level
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#mixin-cheatsheet" class="md-nav__link">
-    Mixin cheatsheet
+      
+        <li class="md-nav__item">
+  <a href="#permission-nodes" class="md-nav__link">
+    Permission Nodes
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="Permission Nodes">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#game-code-used-in-the-example" class="md-nav__link">
-    Game code used in the example
+  <a href="#checking-permission-nodes-outside-of-commands" class="md-nav__link">
+    Checking permission nodes outside of commands
   </a>
   
 </li>
@@ -368,6 +373,21 @@
   
 </nav>
       
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mixin-injects/" class="md-nav__link">
+        Mixin Injects
+      </a>
     </li>
   
 
@@ -398,37 +418,57 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#mixin-triggered-whenever-a-block-is-broken" class="md-nav__link">
-    Mixin triggered whenever a block is broken
+  <a href="#setup" class="md-nav__link">
+    Setup
   </a>
   
-    <nav class="md-nav" aria-label="Mixin triggered whenever a block is broken">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#command-permissions" class="md-nav__link">
+    Command Permissions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#permission-levels" class="md-nav__link">
+    Permission Levels
+  </a>
+  
+    <nav class="md-nav" aria-label="Permission Levels">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#registering-mixins" class="md-nav__link">
-    Registering Mixins
+  <a href="#what-do-the-levels-allow" class="md-nav__link">
+    What do the levels allow?
   </a>
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#fabric-wiki" class="md-nav__link">
-    Fabric Wiki
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set-a-commands-permission-level" class="md-nav__link">
+    Set a Command's Permission Level
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#mixin-cheatsheet" class="md-nav__link">
-    Mixin cheatsheet
+      
+        <li class="md-nav__item">
+  <a href="#permission-nodes" class="md-nav__link">
+    Permission Nodes
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="Permission Nodes">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#game-code-used-in-the-example" class="md-nav__link">
-    Game code used in the example
+  <a href="#checking-permission-nodes-outside-of-commands" class="md-nav__link">
+    Checking permission nodes outside of commands
   </a>
   
 </li>
@@ -451,33 +491,84 @@
               
                 
                 
-                <h1 id="mixin-injects">Mixin Injects</h1>
-<p>Mixin is a powerful tool used for bytecode transformation - specifically modifying the Minecraft source code in a way that prevents as many conflicts as possible between mods. Let's take a look at an example.</p>
-<h2 id="mixin-triggered-whenever-a-block-is-broken">Mixin triggered whenever a block is broken</h2>
-<pre><code class="language-java">@Mixin(Block.class)
-public class MixinBlock {
-    @Inject(at = @At(&quot;HEAD&quot;), method = &quot;onBreak&quot;)
-    public void onBreak(World world, BlockPos pos, BlockState state, PlayerEntity player, CallbackInfo info) {
-        player.sendMessage(new LiteralText(&quot;You broke &quot; + Registry.BLOCK.getId(state.getBlock())), false);
+                <h1 id="permissions">Permissions</h1>
+<p>This tutorial shows how to handle and check permissions.</p>
+<h2 id="setup">Setup</h2>
+<p>You will need to have set up the Luckperms Permissions API in your environment. See the <a href="../libaries/">libraries page</a></p>
+<hr />
+<h2 id="command-permissions">Command Permissions</h2>
+<p>Here is our command without a permission check:</p>
+<pre><code class="language-java">public class MyCommandsMod implements DedicatedServerModInitializer {
+    @Override
+    public void onInitializeServer() {
+        CommandRegistrationCallback.EVENT.register(dispatcher, dedicated -&gt; {
+            dispatcher.register(
+                    literal(&quot;mymodcommand&quot;)
+                            .then(literal(&quot;subcommand&quot;)
+                                    .executes(ctx -&gt; {
+                                        ctx.getSource().getPlayer().sendMessage(new LiteralText(&quot;It works&quot;), false);
+                                        return 1;
+                                    })
+                            )
+            );
+        });
     }
 }
 </code></pre>
-<p>This is considerably more complex than anything shown so far. But what does it do?</p>
-<p><code>@Mixin(Block.class)</code></p>
-<p>This tells the compiler that this is a mixin class, targeting the class <code>net.minecraft.block.Block</code>.</p>
-<p><code>@Inject(at = @At("HEAD"), method = "onBreak")</code></p>
-<p><code>@Inject</code> is a mixin annotation. It tells the mixin compiler to "inject" the logic in our method to the part of the method <code>onBreak</code> specified by the <code>at</code> argument. <code>@At("HEAD")</code> refers to the top of the method target; the first bit of code to be run when that method is called.</p>
-<p>We then have a method with the same arguments as our target method, plus a <code>CallbackInfo</code> object.</p>
-<h4 id="registering-mixins">Registering Mixins</h4>
-<p>When you add a mixin, you must put the mixin class in <code>your_package.mixin</code>. Then, you should add an entry to the <code>server</code> array in your <code>&lt;your_modid&gt;.mixins.json</code> file with the name of your mixin class.</p>
-<h3 id="fabric-wiki">Fabric Wiki</h3>
-<p>Confused? The fabric wiki has a <a href="https://fabricmc.net/wiki/tutorial:mixin_introduction">very extensive guide to mixins</a></p>
-<h3 id="mixin-cheatsheet">Mixin cheatsheet</h3>
-<p>The <a href="https://github.com/2xsaiko/mixin-cheatsheet">Mixin cheatsheet</a> has guides and examples for every type of mixin. If you want to learn how to do more than injecting at the top of a method, I would advise checking it out.</p>
-<h3 id="game-code-used-in-the-example">Game code used in the example</h3>
-<p><code>LiteralText</code>: <code>new LiteralText(String text)</code> - this creates a <code>Text</code> object with the value of the string passed. </p>
-<p><code>Text</code>: a class representing a message that can be sent to a player through chat. Contains colour information, the string literal, or potentially a translation key.</p>
-<p><code>PlayerEntity#sendMessage(Text text, boolean actionBar)</code>: Sends the player a message with the text component provided in the arguments. <code>actionBar</code> should nearly always be false</p>
+<p>This allows any player on the server to use <code>/mymodcommand</code>. But in many cases, we want to restrict who can run the command</p>
+<hr />
+<h2 id="permission-levels">Permission Levels</h2>
+<p>Every player has a permission level. Here is a non-extensive list of standard values:</p>
+<ul>
+<li>Standard player: 0</li>
+<li>Command blocks: 2</li>
+<li>Operator: Specified in <code>server.properties</code>, default 4</li>
+</ul>
+<h4 id="what-do-the-levels-allow">What do the levels allow?</h4>
+<ul>
+<li>0: Normal non-operator commands</li>
+<li>1: Bypass spawn protection</li>
+<li>2: Operator commands without moderation perms</li>
+<li>3: Moderation commands</li>
+<li>4: /stop command</li>
+</ul>
+<hr />
+<h2 id="set-a-commands-permission-level">Set a Command's Permission Level</h2>
+<pre><code class="language-java">public class MyCommandsMod implements DedicatedServerModInitializer {
+    @Override
+    public void onInitializeServer() {
+        CommandRegistrationCallback.EVENT.register(dispatcher, dedicated -&gt; {
+            dispatcher.register(
+                    literal(&quot;mymodcommand&quot;)
+                            .then(literal(&quot;subcommand&quot;)
+                                    .requires(scs -&gt; scs.hasPermissionLevel(3))
+                                    .executes(ctx -&gt; {
+                                        ctx.getSource().getPlayer().sendMessage(new LiteralText(&quot;It works&quot;), false);
+                                        return 1;
+                                    })
+                            )
+            );
+        });
+    }
+}
+</code></pre>
+<p><code>.requires(scs -&gt; scs.hasPermissionLevel(3))</code></p>
+<p>This line means that only players with permission level 3 or greater can run the following parts of the tree</p>
+<hr />
+<h2 id="permission-nodes">Permission Nodes</h2>
+<p>While the permission level system provides security, it does not provide flexibility for servers. For this reason, we use the Luckperms API, which allows permissions mods </p>
+<p>Instead of <code>.requires(scs -&gt; scs.hasPermissionLevel(3))</code>, we can do <code>.requires(Permissions.require("mymod.command.mymodcommand.subcommand", 3))</code></p>
+<p>This line requires that the player have permission level 3 or the permission node of the name <code>mymod.command.mymodcommand.subcommand</code></p>
+<h3 id="checking-permission-nodes-outside-of-commands">Checking permission nodes outside of commands</h3>
+<pre><code class="language-java">public class PermissionUtils {
+    public boolean hasPermissionOrNode(ServerPlayerEntity player, int i, String node) {
+        return Permissions.check(player, node, i);
+    }
+}
+</code></pre>
+<p>This code sample will return whether the player has a permission node or has permission level <code>i</code></p>
+<hr />
+<p>You have now added permissions checks to your code!</p>
                 
               
               
@@ -497,7 +588,7 @@ public class MixinBlock {
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../permissions/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Permissions" rel="prev">
+        <a href="../commands/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Commands" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -506,11 +597,26 @@ public class MixinBlock {
               <span class="md-footer__direction">
                 Previous
               </span>
-              Permissions
+              Commands
             </div>
           </div>
         </a>
       
+      
+        
+        <a href="../mixin-injects/" class="md-footer__link md-footer__link--next" aria-label="Next: Mixin Injects" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Mixin Injects
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
       
     </nav>
   

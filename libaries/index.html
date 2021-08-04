@@ -14,7 +14,7 @@
     
     
       
-        <title>Mixin Injects - Server-side Development</title>
+        <title>Libraries and APIs - Server-side Development</title>
       
     
     
@@ -65,7 +65,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#mixin-injects" class="md-skip">
+        <a href="#libraries-and-apis" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Mixin Injects
+              Libraries and APIs
             
           </span>
         </div>
@@ -289,85 +289,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Mixin Injects
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../mixin-injects/" class="md-nav__link">
         Mixin Injects
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#mixin-triggered-whenever-a-block-is-broken" class="md-nav__link">
-    Mixin triggered whenever a block is broken
-  </a>
-  
-    <nav class="md-nav" aria-label="Mixin triggered whenever a block is broken">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#registering-mixins" class="md-nav__link">
-    Registering Mixins
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#fabric-wiki" class="md-nav__link">
-    Fabric Wiki
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mixin-cheatsheet" class="md-nav__link">
-    Mixin cheatsheet
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#game-code-used-in-the-example" class="md-nav__link">
-    Game code used in the example
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -398,38 +324,51 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#mixin-triggered-whenever-a-block-is-broken" class="md-nav__link">
-    Mixin triggered whenever a block is broken
+  <a href="#adding-a-library-or-api" class="md-nav__link">
+    Adding a Library or API
   </a>
   
-    <nav class="md-nav" aria-label="Mixin triggered whenever a block is broken">
+    <nav class="md-nav" aria-label="Adding a Library or API">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#registering-mixins" class="md-nav__link">
-    Registering Mixins
+  <a href="#locate-artifact-location" class="md-nav__link">
+    Locate Artifact Location
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fabric-wiki" class="md-nav__link">
-    Fabric Wiki
+  <a href="#add-repository" class="md-nav__link">
+    Add Repository
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#mixin-cheatsheet" class="md-nav__link">
-    Mixin cheatsheet
+  <a href="#add-to-buildgradle" class="md-nav__link">
+    Add to build.gradle
+  </a>
+  
+    <nav class="md-nav" aria-label="Add to build.gradle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mod-libraries-or-apis" class="md-nav__link">
+    Mod Libraries or APIs
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#game-code-used-in-the-example" class="md-nav__link">
-    Game code used in the example
+  <a href="#non-mod-libraries-or-apis" class="md-nav__link">
+    Non-Mod Libraries or APIs
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -451,33 +390,58 @@
               
                 
                 
-                <h1 id="mixin-injects">Mixin Injects</h1>
-<p>Mixin is a powerful tool used for bytecode transformation - specifically modifying the Minecraft source code in a way that prevents as many conflicts as possible between mods. Let's take a look at an example.</p>
-<h2 id="mixin-triggered-whenever-a-block-is-broken">Mixin triggered whenever a block is broken</h2>
-<pre><code class="language-java">@Mixin(Block.class)
-public class MixinBlock {
-    @Inject(at = @At(&quot;HEAD&quot;), method = &quot;onBreak&quot;)
-    public void onBreak(World world, BlockPos pos, BlockState state, PlayerEntity player, CallbackInfo info) {
-        player.sendMessage(new LiteralText(&quot;You broke &quot; + Registry.BLOCK.getId(state.getBlock())), false);
+                <h1 id="libraries-and-apis">Libraries and APIs</h1>
+<p>If you have a program you want to write which shares common code with other programs, what would you do? Luckily, this has already been decided. You put your common code in a library for other people to use.</p>
+<h2 id="adding-a-library-or-api">Adding a Library or API</h2>
+<p>For this tutorial, we will be adding the Luckperms Permissions API, which is the most common permissions API in use with Fabric server-side mods.</p>
+<h3 id="locate-artifact-location">Locate Artifact Location</h3>
+<p>You will need to find the maven repository that your library is on. In the case of the luckperms API, the location is <code>https://oss.sonatype.org/content/repositories/snapshots</code></p>
+<h3 id="add-repository">Add Repository</h3>
+<p>Locate the <code>repositories</code> block in your <code>build.gradle</code>:</p>
+<pre><code class="language-groovy">repositories {
+
+}
+</code></pre>
+<p>You now add a maven repository with the URL you found to it:</p>
+<pre><code class="language-groovy">repositories {
+    maven {
+        url = &quot;https://oss.sonatype.org/content/repositories/snapshots&quot;
     }
 }
 </code></pre>
-<p>This is considerably more complex than anything shown so far. But what does it do?</p>
-<p><code>@Mixin(Block.class)</code></p>
-<p>This tells the compiler that this is a mixin class, targeting the class <code>net.minecraft.block.Block</code>.</p>
-<p><code>@Inject(at = @At("HEAD"), method = "onBreak")</code></p>
-<p><code>@Inject</code> is a mixin annotation. It tells the mixin compiler to "inject" the logic in our method to the part of the method <code>onBreak</code> specified by the <code>at</code> argument. <code>@At("HEAD")</code> refers to the top of the method target; the first bit of code to be run when that method is called.</p>
-<p>We then have a method with the same arguments as our target method, plus a <code>CallbackInfo</code> object.</p>
-<h4 id="registering-mixins">Registering Mixins</h4>
-<p>When you add a mixin, you must put the mixin class in <code>your_package.mixin</code>. Then, you should add an entry to the <code>server</code> array in your <code>&lt;your_modid&gt;.mixins.json</code> file with the name of your mixin class.</p>
-<h3 id="fabric-wiki">Fabric Wiki</h3>
-<p>Confused? The fabric wiki has a <a href="https://fabricmc.net/wiki/tutorial:mixin_introduction">very extensive guide to mixins</a></p>
-<h3 id="mixin-cheatsheet">Mixin cheatsheet</h3>
-<p>The <a href="https://github.com/2xsaiko/mixin-cheatsheet">Mixin cheatsheet</a> has guides and examples for every type of mixin. If you want to learn how to do more than injecting at the top of a method, I would advise checking it out.</p>
-<h3 id="game-code-used-in-the-example">Game code used in the example</h3>
-<p><code>LiteralText</code>: <code>new LiteralText(String text)</code> - this creates a <code>Text</code> object with the value of the string passed. </p>
-<p><code>Text</code>: a class representing a message that can be sent to a player through chat. Contains colour information, the string literal, or potentially a translation key.</p>
-<p><code>PlayerEntity#sendMessage(Text text, boolean actionBar)</code>: Sends the player a message with the text component provided in the arguments. <code>actionBar</code> should nearly always be false</p>
+<h3 id="add-to-buildgradle">Add to <code>build.gradle</code></h3>
+<h4 id="mod-libraries-or-apis">Mod Libraries or APIs</h4>
+<p>Find the <code>dependencies</code> block in your <code>build.gradle</code>:</p>
+<pre><code class="language-groovy">dependencies {
+    // To change the versions see the gradle.properties file
+    minecraft &quot;com.mojang:minecraft:${project.minecraft_version}&quot;
+    mappings &quot;net.fabricmc:yarn:${project.yarn_mappings}:v2&quot;
+    modImplementation &quot;net.fabricmc:fabric-loader:${project.loader_version}&quot;
+
+    // Fabric API. This is technically optional, but you probably want it anyway.
+    modImplementation &quot;net.fabricmc.fabric-api:fabric-api:${project.fabric_version}&quot;
+}
+</code></pre>
+<p>Add the following line in the block:</p>
+<p><code>modImplementation(include("library.package:library-name:library-version"))</code></p>
+<p>This will tell Gradle to add our library and when you export your mod, it will add the library inside the produced jar file. If your library is a mod which is intended to be downloaded on its own, such as fabric-language-kotlin, you should exclude the <code>include()</code> block.</p>
+<h4 id="non-mod-libraries-or-apis">Non-Mod Libraries or APIs</h4>
+<p>Find the <code>dependencies</code> block in your <code>build.gradle</code>:</p>
+<pre><code class="language-groovy">dependencies {
+    // To change the versions see the gradle.properties file
+    minecraft &quot;com.mojang:minecraft:${project.minecraft_version}&quot;
+    mappings &quot;net.fabricmc:yarn:${project.yarn_mappings}:v2&quot;
+    modImplementation &quot;net.fabricmc:fabric-loader:${project.loader_version}&quot;
+
+    // Fabric API. This is technically optional, but you probably want it anyway.
+    modImplementation &quot;net.fabricmc.fabric-api:fabric-api:${project.fabric_version}&quot;
+}
+</code></pre>
+<p>Add the following line in the block:</p>
+<p><code>implementation(include("library.package:library-name:library-version"))</code></p>
+<p>This will tell Gradle to add our library and include the library when the mod is exported</p>
+<hr />
+<p>Once you have added your library, you will see a button to refresh Gradle. Press this, and your library is now added!</p>
                 
               
               
@@ -493,26 +457,6 @@ public class MixinBlock {
       
         
 <footer class="md-footer">
-  
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
-      
-        
-        <a href="../permissions/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Permissions" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              Permissions
-            </div>
-          </div>
-        </a>
-      
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
