@@ -4,7 +4,7 @@ This tutorial shows how to handle and check permissions.
 
 ## Setup
 
-You will need to have set up the Luckperms Permissions API in your environment. See the [libraries page](libraries.md)
+You will need to have set up the Fabric Permissions API in your environment. See the [libraries page](libraries.md)
 
 ---
 
@@ -82,7 +82,8 @@ This line means that only players with permission level 3 or greater can run the
 
 ## Permission Nodes
 
-While the permission level system provides security, it does not provide flexibility for servers. For this reason, we use the Luckperms API, which allows permissions mods 
+While the permission level system provides security, it does not provide flexibility for servers. For this reason, we use the Fabric Permissions API.
+It allows you to declare multiple permission nodes for your mod, and them to be used by any permission manager mod that supports it such as [LuckPerms](https://luckperms.net/) or [PlayerRoles](https://modrinth.com/mod/player-roles).
 
 Instead of `.requires(scs -> scs.hasPermissionLevel(3))`, we can do `.requires(Permissions.require("mymod.command.mymodcommand.subcommand", 3))`
 
@@ -102,4 +103,4 @@ This code sample will return whether the player has a permission node or has per
 
 --- 
 
-You have now added permissions checks to your code!
+You have now added permissions checks to your code! For more information, read the [usage page](https://github.com/lucko/fabric-permissions-api/blob/master/USAGE.md) on Fabric Permission API.

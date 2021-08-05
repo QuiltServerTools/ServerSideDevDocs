@@ -4,11 +4,11 @@ If you have a program you want to write which shares common code with other prog
 
 ## Adding a Library or API
 
-For this tutorial, we will be adding the Luckperms Permissions API, which is the most common permissions API in use with Fabric server-side mods.
+For this tutorial, we will be adding the [Fabric Permissions API](https://github.com/lucko/fabric-permissions-api), which is the most common permissions API in use with Fabric server-side mods.
 
 ### Locate Artifact Location
 
-You will need to find the maven repository that your library is on. In the case of the luckperms API, the location is `https://oss.sonatype.org/content/repositories/snapshots`
+You will need to find the maven repository that your library is on. In the case of the Fabric Permissions API, the location is `https://oss.sonatype.org/content/repositories/snapshots`
 
 ### Add Repository
 
@@ -54,7 +54,7 @@ Add the following line in the block:
 
 This will tell Gradle to add our library and when you export your mod, it will add the library inside the produced jar file. If your library is a mod which is intended to be downloaded on its own, such as fabric-language-kotlin, you should exclude the `include()` block.
 
-In the case of Luckperms, we need to add `modImplementation(include('me.lucko:fabric-permissions-api:0.1-SNAPSHOT'))`
+In the case of the permissions API, we need to add `modImplementation(include('me.lucko:fabric-permissions-api:0.1-SNAPSHOT'))`
 
 #### Non-Mod Libraries or APIs
 
