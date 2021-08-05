@@ -586,7 +586,7 @@ org.gradle.jvmargs=-Xmx1G
 <p>Open up the <a href="https://fabricmc.net/versions.html">fabric versions page</a> in your browser.</p>
 <p>Replace your <code># Fabric Properties</code> section with the <code>gradle.properties</code> values found on the versions page.</p>
 <p>Next, you need to set your mod information. </p>
-<p>Set <code>maven_group</code> to <code>io.github.yourusername</code> and set <code>archives_base_name</code> to the name of your mod, in lower-case letters and without spaces</p>
+<p>Set <code>maven_group</code> to <code>com.github.yourusername</code> and set <code>archives_base_name</code> to the name of your mod, in lower-case letters and without spaces</p>
 <hr />
 <h3 id="fabric-setup">Fabric setup</h3>
 <p>Now we have our Gradle set up, you will need to tell fabric about your mod. Navigate to your <code>fabric.mod.json</code> file found under <code>src/main/resources</code></p>
@@ -665,9 +665,9 @@ org.gradle.jvmargs=-Xmx1G
 <h5 id="dedicated-only">Dedicated only</h5>
 <p>Change the <code>main</code> entry in your <code>entrypoints</code> section to <code>server</code></p>
 <hr />
-<p>You must now determine your package. This will most likely be the <code>maven_group</code> value from your <code>gradle.properties</code>, but with the name of your main class appended. An example would be: <code>io.github.username.modname.ModName</code>.</p>
+<p>You must now determine your package. This will most likely be the <code>maven_group</code> value from your <code>gradle.properties</code>, but with the name of your main class appended. An example would be: <code>com.github.username.modname.ModName</code>.</p>
 <p>After specifying this value, we now need to actually create the entrypoint. Delete the <code>net</code> folder found under <code>src/main/java</code>.</p>
-<p>Create a folder structure with your package, within the <code>src/main/java</code> directory. <code>io.github.username.modname</code> would become <code>io/github/username/modname</code>.</p>
+<p>Create a folder structure with your package, within the <code>src/main/java</code> directory. <code>com.github.username.modname</code> would become <code>io/github/username/modname</code>.</p>
 <p>Once you have created this folder, right click it in IntelliJ and press "Create Java class". The class name should be the value after your package specified in the entrypoints section. In the example case, it would be <code>ModName</code>.</p>
 <p>Just one more step now - we need to get Fabric to recognise our main class. Make the class you just created implement <code>DedicatedServerModInitializer</code> if you are dedicated server only, or <code>ModInitializer</code> if you support singleplayer. Add <code>System.out.println("MOD LOADED")</code> to the overridden method IntelliJ should prompt you to make. </p>
 <h4 id="run-configurations">Run configurations</h4>
