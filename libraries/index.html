@@ -480,9 +480,9 @@
                 <h1 id="libraries-and-apis">Libraries and APIs</h1>
 <p>If you have a program you want to write which shares common code with other programs, what would you do? Luckily, this has already been decided. You put your common code in a library for other people to use.</p>
 <h2 id="adding-a-library-or-api">Adding a Library or API</h2>
-<p>For this tutorial, we will be adding the Luckperms Permissions API, which is the most common permissions API in use with Fabric server-side mods.</p>
+<p>For this tutorial, we will be adding the <a href="https://github.com/lucko/fabric-permissions-api">Fabric Permissions API</a>, which is the most common permissions API in use with Fabric server-side mods.</p>
 <h3 id="locate-artifact-location">Locate Artifact Location</h3>
-<p>You will need to find the maven repository that your library is on. In the case of the luckperms API, the location is <code>https://oss.sonatype.org/content/repositories/snapshots</code></p>
+<p>You will need to find the maven repository that your library is on. In the case of the Fabric Permissions API, the location is <code>https://oss.sonatype.org/content/repositories/snapshots</code></p>
 <h3 id="add-repository">Add Repository</h3>
 <p>Locate the <code>repositories</code> block in your <code>build.gradle</code>:</p>
 <pre><code class="language-groovy">repositories {
@@ -512,7 +512,7 @@
 <p>Add the following line in the block:</p>
 <p><code>modImplementation(include("library.package:library-name:library-version"))</code></p>
 <p>This will tell Gradle to add our library and when you export your mod, it will add the library inside the produced jar file. If your library is a mod which is intended to be downloaded on its own, such as fabric-language-kotlin, you should exclude the <code>include()</code> block.</p>
-<p>In the case of Luckperms, we need to add <code>modImplementation(include('me.lucko:fabric-permissions-api:0.1-SNAPSHOT'))</code></p>
+<p>In the case of the permissions API, we need to add <code>modImplementation(include('me.lucko:fabric-permissions-api:0.1-SNAPSHOT'))</code></p>
 <h4 id="non-mod-libraries-or-apis">Non-Mod Libraries or APIs</h4>
 <p>Find the <code>dependencies</code> block in your <code>build.gradle</code>:</p>
 <pre><code class="language-groovy">dependencies {

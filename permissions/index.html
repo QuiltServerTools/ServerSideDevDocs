@@ -494,7 +494,7 @@
                 <h1 id="permissions">Permissions</h1>
 <p>This tutorial shows how to handle and check permissions.</p>
 <h2 id="setup">Setup</h2>
-<p>You will need to have set up the Luckperms Permissions API in your environment. See the <a href="../libraries/">libraries page</a></p>
+<p>You will need to have set up the Fabric Permissions API in your environment. See the <a href="../libraries/">libraries page</a></p>
 <hr />
 <h2 id="command-permissions">Command Permissions</h2>
 <p>Here is our command without a permission check:</p>
@@ -556,7 +556,8 @@
 <p>This line means that only players with permission level 3 or greater can run the following parts of the tree</p>
 <hr />
 <h2 id="permission-nodes">Permission Nodes</h2>
-<p>While the permission level system provides security, it does not provide flexibility for servers. For this reason, we use the Luckperms API, which allows permissions mods </p>
+<p>While the permission level system provides security, it does not provide flexibility for servers. For this reason, we use the Fabric Permissions API.
+It allows you to declare multiple permission nodes for your mod, and them to be used by any permission manager mod that supports it such as <a href="https://luckperms.net/">LuckPerms</a> or <a href="https://modrinth.com/mod/player-roles">PlayerRoles</a>.</p>
 <p>Instead of <code>.requires(scs -&gt; scs.hasPermissionLevel(3))</code>, we can do <code>.requires(Permissions.require("mymod.command.mymodcommand.subcommand", 3))</code></p>
 <p>This line requires that the player have permission level 3 or the permission node of the name <code>mymod.command.mymodcommand.subcommand</code></p>
 <h3 id="checking-permission-nodes-outside-of-commands">Checking permission nodes outside of commands</h3>
@@ -568,7 +569,7 @@
 </code></pre>
 <p>This code sample will return whether the player has a permission node or has permission level <code>i</code></p>
 <hr />
-<p>You have now added permissions checks to your code!</p>
+<p>You have now added permissions checks to your code! For more information, read the <a href="https://github.com/lucko/fabric-permissions-api/blob/master/USAGE.md">usage page</a> on Fabric Permission API.</p>
                 
               
               
