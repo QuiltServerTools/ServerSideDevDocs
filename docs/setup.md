@@ -56,7 +56,7 @@ Replace your `# Fabric Properties` section with the `gradle.properties` values f
 
 Next, you need to set your mod information. 
 
-Set `maven_group` to `io.github.yourusername` and set `archives_base_name` to the name of your mod, in lower-case letters and without spaces
+Set `maven_group` to `com.github.yourusername` and set `archives_base_name` to the name of your mod, in lower-case letters and without spaces
 
 ---
 
@@ -164,11 +164,11 @@ Change the `main` entry in your `entrypoints` section to `server`
 
 ---
 
-You must now determine your package. This will most likely be the `maven_group` value from your `gradle.properties`, but with the name of your main class appended. An example would be: `io.github.username.modname.ModName`.
+You must now determine your package. This will most likely be the `maven_group` value from your `gradle.properties`, but with the name of your main class appended. An example would be: `com.github.username.modname.ModName`.
 
 After specifying this value, we now need to actually create the entrypoint. Delete the `net` folder found under `src/main/java`.
 
-Create a folder structure with your package, within the `src/main/java` directory. `io.github.username.modname` would become `io/github/username/modname`.
+Create a folder structure with your package, within the `src/main/java` directory. `com.github.username.modname` would become `io/github/username/modname`.
 
 Once you have created this folder, right click it in IntelliJ and press "Create Java class". The class name should be the value after your package specified in the entrypoints section. In the example case, it would be `ModName`.
 
