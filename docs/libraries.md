@@ -20,7 +20,7 @@ repositories {
 }
 ```
 
-You now add a maven repository with the URL you found to it:
+You now add a maven repository with the URL that links to it:
 
 ```groovy
 repositories {
