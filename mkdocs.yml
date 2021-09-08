@@ -8,6 +8,7 @@ nav:
   - commands.md
   - permissions.md
   - mixin-injects.md
+  - nbt.md
 
 theme:
   name: material

@@ -144,6 +144,51 @@ This would leave you with the option of the two commands below:
 
 `/count <count>` -> "You entered: <count>"
 
+### Arguments Types
+
+Vanilla provides many argument types to use in commands.
+It's also possible to register your own argument types, but this does **not** work serverside.
+You can create pseudo argument types with a string argument type and a custom suggester.
+
+#### Vanilla Argument Types
+* EntityArgumentType
+* GameProfileArgumentType
+* BlockPosArgumentType
+* ColumnPosArgumentType
+* Vec3ArgumentType
+* Vec2ArgumentType
+* BlockStateArgumentType
+* BlockPredicateArgumentType
+* ItemStackArgumentType
+* ItemPredicateArgumentType
+* ColorArgumentType
+* TextArgumentType
+* MessageArgumentType
+* NbtCompoundArgumentType
+* NbtElementArgumentType
+* NbtPathArgumentType
+* ScoreboardObjectiveArgumentType
+* ScoreboardCriterionArgumentType
+* OperationArgumentType
+* ParticleEffectArgumentType
+* AngleArgumentType
+* RotationArgumentType
+* ScoreboardSlotArgumentType
+* ScoreHolderArgumentType
+* SwizzleArgumentType
+* TeamArgumentType
+* ItemSlotArgumentType
+* IdentifierArgumentType
+* StatusEffectArgumentType
+* CommandFunctionArgumentType
+* EntityAnchorArgumentType
+* IntRangeArgumentType
+* FloatRangeArgumentType
+* EnchantmentArgumentType
+* EntitySummonArgumentType
+* DimensionArgumentType
+* TimeArgumentType
+* UuidArgumentType
 ---
 
 Congratulations! You learnt how to create a command in your mod. You can now learn to add permission checks to your commands on the [Permissions page](permissions.md)
