@@ -22,7 +22,7 @@ This tells the compiler that this is a mixin class, targeting the class `net.min
 
 `@Inject(at = @At("HEAD"), method = "onBreak")`
 
-`@Inject` is a mixin annotation. It tells the mixin compiler to "inject" the logic of our method into the part of the `onBreak` method we specified with the `at` argument. `@At("HEAD")` refers to the top of the method target; the first bit of code to be run when that method is called.
+`@Inject` is a Mixin annotation. It tells the Mixin runtime to "inject" the logic of our method into the `onBreak` method we specified with the `method` argument. The `at = @At("HEAD")` part means that our code will be injected at the top of the method; making it the first thing to run run when that method is called.
 
 We then have a method with the same arguments as our target method, plus a `CallbackInfo` object.
 
