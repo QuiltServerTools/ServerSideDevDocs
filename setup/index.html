@@ -10,7 +10,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.6">
     
     
       
@@ -18,7 +18,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.f7f47774.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.802231af.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.3f5d1f46.min.css">
@@ -301,8 +301,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#dedicated-only" class="md-nav__link">
-    Dedicated only
+  <a href="#dedicated-server-only" class="md-nav__link">
+    Dedicated server only
   </a>
   
 </li>
@@ -512,8 +512,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#dedicated-only" class="md-nav__link">
-    Dedicated only
+  <a href="#dedicated-server-only" class="md-nav__link">
+    Dedicated server only
   </a>
   
 </li>
@@ -601,7 +601,7 @@ org.gradle.jvmargs=-Xmx1G
 <p>Open up the <a href="https://fabricmc.net/versions.html">fabric versions page</a> in your browser.</p>
 <p>Replace your <code># Fabric Properties</code> section with the <code>gradle.properties</code> values found on the versions page.</p>
 <p>Next, you need to set your mod information. </p>
-<p>Set <code>maven_group</code> to <code>com.github.yourusername</code> and set <code>archives_base_name</code> to the name of your mod, in lower-case letters and without spaces</p>
+<p>Set <code>maven_group</code> to <code>io.github.yourusername</code> and set <code>archives_base_name</code> to the name of your mod, in lower-case letters and without spaces.</p>
 <hr />
 <h3 id="fabric-setup">Fabric setup</h3>
 <p>Now we have our Gradle set up, you will need to tell fabric about your mod. Navigate to your <code>fabric.mod.json</code> file found under <code>src/main/resources</code></p>
@@ -677,14 +677,14 @@ org.gradle.jvmargs=-Xmx1G
 <p>Replace the <code>net.fabricmc.example</code> with your mod package, rename the <code>client</code> block to <code>server</code> and delete the <code>"ExampleMixin"</code> entry.</p>
 <h4 id="entrypoints">Entrypoints</h4>
 <p>Entrypoints are the classes where Fabric starts your mod - a piece of code that runs on game launch. More information can be found on the <a href="https://fabricmc.net/wiki/documentation:entrypoint">fabric wiki page</a>.</p>
-<h5 id="dedicated-only">Dedicated only</h5>
+<h5 id="dedicated-server-only">Dedicated server only</h5>
 <p>Change the <code>main</code> entry in your <code>entrypoints</code> section to <code>server</code></p>
 <hr />
-<p>You must now determine your package. This will most likely be the <code>maven_group</code> value from your <code>gradle.properties</code>, but with the name of your main class appended. An example would be: <code>com.github.username.modname.ModName</code>.</p>
+<p>You must now determine your package. This will most likely be the <code>maven_group</code> value from your <code>gradle.properties</code>, but with the name of your main class appended. An example would be: <code>io.github.username.modname.ModName</code>.</p>
 <p>After specifying this value, we now need to actually create the entrypoint. Delete the <code>net</code> folder found under <code>src/main/java</code>.</p>
-<p>Create a folder structure with your package, within the <code>src/main/java</code> directory. <code>com.github.username.modname</code> would become <code>io/github/username/modname</code>.</p>
+<p>Create a folder structure with your package, within the <code>src/main/java</code> directory. <code>io.github.username.modname</code> would become <code>io/github/username/modname</code>.</p>
 <p>Once you have created this folder, right click it in IntelliJ and press "Create Java class". The class name should be the value after your package specified in the entrypoints section. In the example case, it would be <code>ModName</code>.</p>
-<p>Just one more step now - we need to get Fabric to recognise our main class. Make the class you just created implement <code>DedicatedServerModInitializer</code> if you are dedicated server only, or <code>ModInitializer</code> if you support singleplayer. Add <code>System.out.println("MOD LOADED")</code> to the overridden method IntelliJ should prompt you to make. </p>
+<p>Just one more step now - we need to get Fabric to recognise our main class. Make the class you just created implement <code>DedicatedServerModInitializer</code> if you are targeting dedicated server only, or <code>ModInitializer</code> if you support singleplayer. Add <code>System.out.println("MOD LOADED")</code> to the overridden method IntelliJ should prompt you to make. </p>
 <h4 id="run-configurations">Run configurations</h4>
 <p>Go to the top right-hand corner of IntelliJ, press "Add Configuration", then under "application" you will find <code>Minecraft Server</code>. Select that and press debug. You will need to agree to the EULA, but if all goes well your mod has been loaded!</p>
 <h2 id="export">Export</h2>
@@ -781,10 +781,10 @@ org.gradle.jvmargs=-Xmx1G
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.409db549.min.js", "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.febc23d1.min.js"></script>
+      <script src="../assets/javascripts/bundle.756773cc.min.js"></script>
       
     
   </body>

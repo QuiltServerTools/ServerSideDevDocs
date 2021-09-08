@@ -10,7 +10,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.6">
     
     
       
@@ -18,7 +18,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.f7f47774.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.802231af.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.3f5d1f46.min.css">
@@ -481,10 +481,10 @@ public class MixinBlock {
 <p><code>@Mixin(Block.class)</code></p>
 <p>This tells the compiler that this is a mixin class, targeting the class <code>net.minecraft.block.Block</code>.</p>
 <p><code>@Inject(at = @At("HEAD"), method = "onBreak")</code></p>
-<p><code>@Inject</code> is a mixin annotation. It tells the mixin compiler to "inject" the logic in our method to the part of the method <code>onBreak</code> specified by the <code>at</code> argument. <code>@At("HEAD")</code> refers to the top of the method target; the first bit of code to be run when that method is called.</p>
+<p><code>@Inject</code> is a Mixin annotation. It tells the Mixin runtime to "inject" the logic of our method into the <code>onBreak</code> method we specified with the <code>method</code> argument. The <code>at = @At("HEAD")</code> part means that our code will be injected at the top of the method; making it the first thing to run run when that method is called.</p>
 <p>We then have a method with the same arguments as our target method, plus a <code>CallbackInfo</code> object.</p>
 <h4 id="registering-mixins">Registering Mixins</h4>
-<p>When you add a mixin, you must put the mixin class in <code>your_package.mixin</code>. Then, you should add an entry to the <code>server</code> array in your <code>&lt;your_modid&gt;.mixins.json</code> file with the name of your mixin class.</p>
+<p>When you add a mixin, you must put the mixin class in <code>&lt;your_package&gt;.mixin</code>. Then, you should add an entry to the <code>server</code> array in your <code>&lt;your_modid&gt;.mixins.json</code> file with the name of your mixin class. Any mixins listed in the <code>server</code> array will only be loaded on a dedicated server.</p>
 <h3 id="fabric-wiki">Fabric Wiki</h3>
 <p>Confused? The fabric wiki has a <a href="https://fabricmc.net/wiki/tutorial:mixin_introduction">very extensive guide to mixins</a></p>
 <h3 id="mixin-cheatsheet">Mixin cheatsheet</h3>
@@ -585,10 +585,10 @@ public class MixinBlock {
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.409db549.min.js", "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.febc23d1.min.js"></script>
+      <script src="../assets/javascripts/bundle.756773cc.min.js"></script>
       
     
   </body>
