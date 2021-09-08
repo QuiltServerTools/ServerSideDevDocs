@@ -56,7 +56,7 @@ Replace your `# Fabric Properties` section with the `gradle.properties` values f
 
 Next, you need to set your mod information. 
 
-Set `maven_group` to `io.github.yourusername` and set `archives_base_name` to the name of your mod, in lower-case letters and without spaces
+Set `maven_group` to `io.github.yourusername` and set `archives_base_name` to the name of your mod, in lower-case letters and without spaces.
 
 ---
 
