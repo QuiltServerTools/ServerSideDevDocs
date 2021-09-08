@@ -28,7 +28,7 @@ We then have a method with the same arguments as our target method, plus a `Call
 
 #### Registering Mixins
 
-When you add a mixin, you must put the mixin class in `<your_package>.mixin`. Then, you should add an entry to the `server` array in your `<your_modid>.mixins.json` file with the name of your mixin class. Any mixins listed in the `server` array will only be loaded on a dedicated server
+When you add a mixin, you must put the mixin class in `<your_package>.mixin`. Then, you should add an entry to the `server` array in your `<your_modid>.mixins.json` file with the name of your mixin class. Any mixins listed in the `server` array will only be loaded on a dedicated server.
 
 ### Fabric Wiki
 
