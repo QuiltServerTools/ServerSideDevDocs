@@ -22,13 +22,13 @@ This tells the compiler that this is a mixin class, targeting the class `net.min
 
 `@Inject(at = @At("HEAD"), method = "onBreak")`
 
-`@Inject` is a mixin annotation. It tells the mixin compiler to "inject" the logic in our method to the part of the method `onBreak` specified by the `at` argument. `@At("HEAD")` refers to the top of the method target; the first bit of code to be run when that method is called.
+`@Inject` is a Mixin annotation. It tells the Mixin runtime to "inject" the logic of our method into the `onBreak` method we specified with the `method` argument. The `at = @At("HEAD")` part means that our code will be injected at the top of the method; making it the first thing to run run when that method is called.
 
 We then have a method with the same arguments as our target method, plus a `CallbackInfo` object.
 
 #### Registering Mixins
 
-When you add a mixin, you must put the mixin class in `your_package.mixin`. Then, you should add an entry to the `server` array in your `<your_modid>.mixins.json` file with the name of your mixin class.
+When you add a mixin, you must put the mixin class in `<your_package>.mixin`. Then, you should add an entry to the `server` array in your `<your_modid>.mixins.json` file with the name of your mixin class. Any mixins listed in the `server` array will only be loaded on a dedicated server.
 
 ### Fabric Wiki
 
