@@ -93,11 +93,11 @@ public class MyModConfig {
         }
 		// gson.fromJson() can return null if file is empty
 		if (config == null) {
-			// Saves the file
 			config = new MyModConfig();
-			config.saveConfigFile(file);
 		}
 		
+		// Saves the file in order to write new fields if they were added
+		config.saveConfigFile(file);
         return config;
     }
 
