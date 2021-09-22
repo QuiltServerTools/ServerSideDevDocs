@@ -6,7 +6,7 @@ For such things, we can utilize included `Gson` library to read and write json c
 ## Why gson?
 
 As mentioned above, `Gson` is already available in vanilla minecraft, meaning that you won't need
-any extra dependencies. If you don't need anything special or don't like `json` format, `Gson` will
+any extra dependencies. If you don't need anything special and you're fine with `json` format, `Gson` will
 probably cover your needs. Not to mention that it will auto add the missing fields when updating
 the config without need to overwrite old values.
 
