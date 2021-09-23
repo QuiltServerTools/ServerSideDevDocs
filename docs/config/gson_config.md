@@ -192,7 +192,7 @@ public class MyModConfig {
         public String message = "This is a another message.";
     }
     
-    public ArrayList<String> randomQuestions = new ArrayList<>(Arrays.asList(
+    public List<String> randomQuestions = new ArrayList<>(Arrays.asList(
         "Why no forge port?",
         "When quilt?",
         "Tiny potato or tiny pumpkin?",
