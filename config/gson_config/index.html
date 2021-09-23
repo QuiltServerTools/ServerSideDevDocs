@@ -9,19 +9,19 @@
       
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.3.0">
     
     
       
-        <title>NBT - Server-side Development</title>
+        <title>Using gson - Server-side Development</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.8b42a75e.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8b42a75e.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.3f5d1f46.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
         
       
     
@@ -55,7 +55,7 @@
     <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="slate-gray" data-md-color-accent="">
   
     
-    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
     
       <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
     
@@ -65,7 +65,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#nbt" class="md-skip">
+        <a href="#config-files" class="md-skip">
           Skip to content
         </a>
       
@@ -78,7 +78,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Server-side Development" class="md-header__button md-logo" aria-label="Server-side Development" data-md-component="logo">
+    <a href="../.." title="Server-side Development" class="md-header__button md-logo" aria-label="Server-side Development" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -97,7 +97,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              NBT
+              Using gson
             
           </span>
         </div>
@@ -187,7 +187,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Server-side Development" class="md-nav__button md-logo" aria-label="Server-side Development" data-md-component="logo">
+    <a href="../.." title="Server-side Development" class="md-nav__button md-logo" aria-label="Server-side Development" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -206,7 +206,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         Server-side Developer Documentation for Fabric
       </a>
     </li>
@@ -221,7 +221,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../setup/" class="md-nav__link">
+      <a href="../../setup/" class="md-nav__link">
         Setup
       </a>
     </li>
@@ -236,7 +236,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../events/" class="md-nav__link">
+      <a href="../../events/" class="md-nav__link">
         Events
       </a>
     </li>
@@ -251,7 +251,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../libraries/" class="md-nav__link">
+      <a href="../../libraries/" class="md-nav__link">
         Libraries and APIs
       </a>
     </li>
@@ -266,7 +266,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../commands/" class="md-nav__link">
+      <a href="../../commands/" class="md-nav__link">
         Commands
       </a>
     </li>
@@ -281,7 +281,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../permissions/" class="md-nav__link">
+      <a href="../../permissions/" class="md-nav__link">
         Permissions
       </a>
     </li>
@@ -296,7 +296,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mixin-injects/" class="md-nav__link">
+      <a href="../../mixin-injects/" class="md-nav__link">
         Mixin Injects
       </a>
     </li>
@@ -309,58 +309,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          NBT
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../nbt/" class="md-nav__link">
         NBT
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#introduction" class="md-nav__link">
-    Introduction
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#practical-use" class="md-nav__link">
-    Practical use
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -371,12 +324,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" checked>
       
       
       
@@ -397,11 +352,93 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../config/gson_config/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Using gson
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Using gson
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-gson" class="md-nav__link">
+    Why gson?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#config-structure" class="md-nav__link">
+    Config structure
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#saving-reading-and-parsing" class="md-nav__link">
+    Saving, reading and parsing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nested-classes" class="md-nav__link">
+    Nested classes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arrays" class="md-nav__link">
+    Arrays
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#naming-the-fields-differently" class="md-nav__link">
+    Naming the fields differently
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#poor-mans-comments" class="md-nav__link">
+    Poor-man's comments
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -439,15 +476,50 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#introduction" class="md-nav__link">
-    Introduction
+  <a href="#why-gson" class="md-nav__link">
+    Why gson?
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#practical-use" class="md-nav__link">
-    Practical use
+  <a href="#config-structure" class="md-nav__link">
+    Config structure
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#saving-reading-and-parsing" class="md-nav__link">
+    Saving, reading and parsing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nested-classes" class="md-nav__link">
+    Nested classes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arrays" class="md-nav__link">
+    Arrays
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#naming-the-fields-differently" class="md-nav__link">
+    Naming the fields differently
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#poor-mans-comments" class="md-nav__link">
+    Poor-man's comments
   </a>
   
 </li>
@@ -465,53 +537,256 @@
               
                 
                 
-                <h1 id="nbt">NBT</h1>
-<p>NBT is the way Minecraft stores information for multiple things: entity data, world storage, items and many more features are all powered by NBT.</p>
-<h2 id="introduction">Introduction</h2>
-<p>Let's start by creating an empty NBT tag</p>
-<pre><code class="language-java">NbtCompound nbt = new NbtCompound();
-</code></pre>
-<p>Here we register a variable, <code>nbt</code>, and make it an empty NBT object.</p>
-<p>Let's add some information:</p>
-<pre><code class="language-java">NbtCompound myInformation = new NbtCompound();
+                <h1 id="config-files">Config files</h1>
+<p>Sooner or later you'll get to the point where you'd like to make certain things toggleable.
+For such things, we can utilize included <code>Gson</code> library to read and write json configs.</p>
+<h2 id="why-gson">Why gson?</h2>
+<p>As mentioned above, <code>Gson</code> is already available in vanilla minecraft, meaning that you won't need
+any extra dependencies. If you don't need anything special and you're fine with <code>json</code> format, <code>Gson</code> will
+probably cover your needs. Not to mention that it will auto add the missing fields when updating
+the config without need to overwrite old values.</p>
+<h2 id="config-structure">Config structure</h2>
+<p>We'll use a custom config class that has fields that user / admin will be able to change.
+See below example.</p>
+<pre><code class="language-java">public class MyModConfig {
 
-myInformation.putInt(&quot;age&quot;, 69);
-myInformation.putString(&quot;name&quot;, &quot;nbt tutorial&quot;);
-</code></pre>
-<p>We have now added an integer value, age, to our object. We also add a string value, called name.</p>
-<p>But you may be wondering: isn't this just glorified JSON? Well in essence, yes. NBT has many similarities with JSON. If you know how to use JSON, NBT should be trivial to pick up. </p>
-<p>Like JSON, we can also add objects as the value:</p>
-<pre><code class="language-java">myInformation.putInt(&quot;profile&quot;, new NbtCompound());
-</code></pre>
-<p>This line would put an empty object as the profile value.</p>
-<p>Below is a representation of what we have done, in JSON:</p>
-<pre><code class="language-json">{
-  &quot;age&quot;: 69,
-  &quot;name&quot;: &quot;nbt tutorial&quot;,
-  &quot;profile&quot;: {
+    public float activationRange = 8.0F;
 
-  }
+    public boolean show = true;
+
+    public String message = &quot;This is a config guide.&quot;;
+
 }
 </code></pre>
-<hr />
-<p>You can also read from NBT objects:</p>
-<pre><code class="language-java">String name = myInformation.getString(&quot;name&quot;);
-NbtCompound profile = myInformation.get(&quot;profile&quot;);
+<p>We can access our config values like this:</p>
+<pre><code class="language-java">MyModConfig config = new MyModConfig();
+
+if(config.show)
+    System.out.println(config.message);
+
+config.show = false;
+
+// Do other stuff with values ...
 </code></pre>
-<hr />
-<h2 id="practical-use">Practical use</h2>
-<p>All this is great, but we actually need to use it. So, how?</p>
-<p>This code sample will take the NBT from a hopper and will print it to the console:</p>
-<pre><code class="language-java">public class NbtTutorial {
-    public static void printNbt(HopperBlockEntity hopper) {
-        NbtCompound nbt = hopper.writeNbt(new NbtCompound());
-        System.out.println(nbt.toString());
+<p>We can present the config object in the following json structure.</p>
+<pre><code class="language-json">{
+    &quot;activationRange&quot;: 8.0,
+    &quot;show&quot;: true,
+    &quot;message&quot;: &quot;This is a config guide.&quot;
+}
+</code></pre>
+<h2 id="saving-reading-and-parsing">Saving, reading and parsing</h2>
+<p>If <code>config</code> only exists in our memory, it's not that usefull, as changes will be reset
+after server restart. If we want to make them permanent, we should write the config to a file.</p>
+<pre><code class="language-java">public class MyModConfig {
+    private static final Gson gson = new GsonBuilder()
+            .setPrettyPrinting() // Makes the json use new lines instead of being a &quot;one-liner&quot;
+            .serializeNulls() // Makes fields with `null` value to be written as well.
+            .disableHtmlEscaping() // We'll be able to use custom chars without them being saved differently
+            .create();
+
+    // Config values
+    public float activationRange = 8.0F;
+
+    public boolean show = true;
+
+    public String message = &quot;This is a config guide.&quot;;
+
+
+    // Reading and saving
+
+    /**
+     * Loads config file.
+     *
+     * @param file file to load the config file from.
+     * @return MyModConfig object
+     */
+    public static MyModConfig loadConfigFile(File file) {
+        MyModConfig config = null;
+
+        if (file.exists()) {
+            // An existing config is present, we should use its values
+            try (BufferedReader fileReader = new BufferedReader(
+                    new InputStreamReader(new FileInputStream(file), StandardCharsets.UTF_8)
+            )) {
+                // Parses the config file and puts the values into config object
+                config = gson.fromJson(fileReader, MyModConfig.class);
+            } catch (IOException e) {
+                throw new RuntimeException(&quot;[MyMod] Problem occurred when trying to load config: &quot;, e);
+            }
+        }
+        // gson.fromJson() can return null if file is empty
+        if (config == null) {
+            config = new MyModConfig();
+        }
+
+        // Saves the file in order to write new fields if they were added
+        config.saveConfigFile(file);
+        return config;
+    }
+
+    /**
+     * Saves the config to the given file.
+     *
+     * @param file file to save config to
+     */
+    public void saveConfigFile(File file) {
+        try (Writer writer = new OutputStreamWriter(new FileOutputStream(file), StandardCharsets.UTF_8)) {
+            gson.toJson(this, writer);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
 </code></pre>
-<p><code>writeNbt(NbtCompound)</code> writes the entity data to the NBT tag provided in the argument</p>
-<p>Not to be confused with</p>
-<p><code>readNbt(NbtCompound)</code>, which writes the data from the NBT tag to the entity</p>
+<p>Now that we have those new methods, we should use the following code to load the config.</p>
+<pre><code class="language-java">File configFile = FabricLoader.getInstance().getConfigDir().resolve(&quot;my_mod_config.json&quot;);
+MyModConfig config = MyModConfig.loadConfigFile(configFile);
+
+if(config.show)
+    System.out.println(config.message);
+
+config.show = false;
+
+// We can save it now
+// If you'd like, you can also save the file parameter when loading
+config.save(configFile);
+
+// Do other stuff with values ...
+</code></pre>
+<p>This will automatically create new config file or read the existing one.</p>
+<h2 id="nested-classes">Nested classes</h2>
+<p>Creating nested structures is really simple. All you need to have is another
+static inner class and a new object for it. See the example below.</p>
+<pre><code class="language-java">public class MyModConfig {
+
+    public float activationRange = 8.0F;
+
+    public boolean show = true;
+
+    public String message = &quot;This is a config guide.&quot;;
+
+    public NestedValues nested = new NestedValues();
+
+    public static class NestedValues {
+        public String message = &quot;This is a another message.&quot;;
+    }
+
+}
+</code></pre>
+<p>And its json counterpart:</p>
+<pre><code class="language-json">{
+    &quot;activationRange&quot;: 8.0,
+    &quot;show&quot;: true,
+    &quot;message&quot;: &quot;This is a config guide.&quot;,
+    &quot;nested&quot;: {
+        &quot;message&quot;: &quot;This is a another message.&quot;
+    }
+}
+</code></pre>
+<h2 id="arrays">Arrays</h2>
+<p>To create a json array, you can use <code>ArrayList&lt;&gt;</code> class from java.</p>
+<pre><code class="language-java">public class MyModConfig {
+
+    public float activationRange = 8.0F;
+
+    public boolean show = true;
+
+    public String message = &quot;This is a config guide.&quot;;
+
+    public NestedValues nested = new NestedValues();
+
+    public static class NestedValues {
+        public String message = &quot;This is a another message.&quot;;
+    }
+
+    public List&lt;String&gt; randomQuestions = new ArrayList&lt;&gt;(Arrays.asList(
+        &quot;Why no forge port?&quot;,
+        &quot;When quilt?&quot;,
+        &quot;Tiny potato or tiny pumpkin?&quot;,
+        &quot;What is minecraft?&quot; // How dare you
+    ));
+}
+</code></pre>
+<p>And its json counterpart:</p>
+<pre><code class="language-json">{
+    &quot;activationRange&quot;: 8.0,
+    &quot;show&quot;: true,
+    &quot;message&quot;: &quot;This is a config guide.&quot;,
+    &quot;nested&quot;: {
+        &quot;message&quot;: &quot;This is a another message.&quot;
+    },
+    &quot;randomQuestions&quot;: [
+        &quot;Why no forge port?&quot;,
+        &quot;When quilt?&quot;,
+        &quot;Tiny potato or tiny pumpkin?&quot;,
+        &quot;What is minecraft?&quot;
+    ]
+}
+</code></pre>
+<h2 id="naming-the-fields-differently">Naming the fields differently</h2>
+<p>Json structure doesn't limit us as much as java when it comes to naming fields.
+Luckily, we can overcome this problem by using <code>@SerializedName</code> annotation on fields
+to change how they're written in the file.</p>
+<pre><code class="language-java">public class MyModConfig {
+
+    @SerializedName(&quot;activation range&quot;)
+    public float activationRange = 8.0F;
+
+    @SerializedName(&quot;Show config message.&quot;)
+    public boolean show = true;
+
+    @SerializedName(&quot;config_message&quot;)
+    public String message = &quot;This is a config guide.&quot;;
+
+}
+</code></pre>
+<p>The above code will result in the following json:</p>
+<pre><code class="language-json">{
+    &quot;activation range&quot;: 8.0,
+    &quot;Show config message.&quot;: true,
+    &quot;config_message&quot;: &quot;This is a config guide.&quot;
+}
+</code></pre>
+<h2 id="poor-mans-comments">Poor-man's comments</h2>
+<p>With the above technique we can even add "comments" to our config.
+Sure, they won't be "perfect json5" comments, but ... they'll still
+be useful for the end user. Comments must be unique, as they
+act like json fields.</p>
+<pre><code class="language-java">public class MyModConfig {
+
+    // Naming comments in style `_comment_` + `field name`
+    @SerializedName(&quot;// When to activate feature xyz.&quot;)
+    public final String _comment_activationRange = &quot;(default: 8.0)&quot;;
+    @SerializedName(&quot;activation_range&quot;)
+    public float activationRange = 8.0F;
+
+
+    @SerializedName(&quot;// Whether to show config message.&quot;)
+    public final String _comment_show = &quot;(default: true)&quot;;
+    @SerializedName(&quot;show_config_message.&quot;)
+    public boolean show = true;
+
+    @SerializedName(&quot;// Which message to print out&quot;)
+    public final String _comment_message0 = &quot;&quot;;
+    @SerializedName(&quot;// if above option is enabled&quot;)
+    public final String _comment_message1 = &quot;(default: 'This is a config guide.')&quot;;
+    @SerializedName(&quot;config_message&quot;)
+    public String message = &quot;This is a config guide.&quot;;
+
+}
+</code></pre>
+<p>This will be saved as the following json:</p>
+<pre><code class="language-json">{
+    &quot;// When to activate feature xyz.&quot;: &quot;(default: 8.0)&quot;,
+    &quot;activation_range&quot;: 8.0,
+    &quot;// Whether to show config message.&quot;: &quot;(default: true)&quot;,
+    &quot;show_config_message.&quot;: true,
+    &quot;// Which message to print out&quot;: &quot;&quot;,
+    &quot;// if above option is enabled&quot;: &quot;(default: 'This is a config guide.')&quot;,
+    &quot;config_message&quot;: &quot;This is a config guide.&quot;
+}
+</code></pre>
                 
               
               
@@ -531,7 +806,7 @@ NbtCompound profile = myInformation.get(&quot;profile&quot;);
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../mixin-injects/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Mixin Injects" rel="prev">
+        <a href="../../nbt/" class="md-footer__link md-footer__link--prev" aria-label="Previous: NBT" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -540,26 +815,11 @@ NbtCompound profile = myInformation.get(&quot;profile&quot;);
               <span class="md-footer__direction">
                 Previous
               </span>
-              Mixin Injects
+              NBT
             </div>
           </div>
         </a>
       
-      
-        
-        <a href="../config/gson_config/" class="md-footer__link md-footer__link--next" aria-label="Next: Using gson" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Using gson
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-          </div>
-        </a>
       
     </nav>
   
@@ -601,10 +861,10 @@ NbtCompound profile = myInformation.get(&quot;profile&quot;);
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.f8263e09.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.f8263e09.min.js", "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.4fc53ad4.min.js"></script>
+      <script src="../../assets/javascripts/bundle.4fc53ad4.min.js"></script>
       
     
   </body>
