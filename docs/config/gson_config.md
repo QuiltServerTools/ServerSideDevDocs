@@ -118,7 +118,7 @@ public class MyModConfig {
 
 Now that we have those new methods, we should use the following code to load the config.
 ```java
-File configFile = FabricLoader.getInstance().getConfigDir().resolve(“my_mod_config.json”);
+File configFile = FabricLoader.getInstance().getConfigDir().resolve("my_mod_config.json");
 MyModConfig config = MyModConfig.loadConfigFile(configFile);
 
 if(config.show)
