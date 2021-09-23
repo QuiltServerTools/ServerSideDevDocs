@@ -9,6 +9,8 @@ nav:
   - permissions.md
   - mixin-injects.md
   - nbt.md
+  - "Configs":
+    - "Using gson": config/gson_config.md
 
 theme:
   name: material
