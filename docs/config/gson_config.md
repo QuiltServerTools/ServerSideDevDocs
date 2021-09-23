@@ -22,7 +22,7 @@ public class MyModConfig {
 
     public boolean show = true;
 
-	public String message = "This is a config guide.";
+    public String message = "This is a config guide.";
     
 }
 ```
@@ -31,7 +31,7 @@ We can access our config values like this:
 MyModConfig config = new MyModConfig();
 
 if(config.show)
-	System.out.println(config.message);
+    System.out.println(config.message);
 
 config.show = false;
 
@@ -42,9 +42,9 @@ We can present the config object in the following json structure.
 
 ```json
 {
-	"activationRange": 8.0,
-	"show": true,
-	"message": "This is a config guide."
+    "activationRange": 8.0,
+    "show": true,
+    "message": "This is a config guide."
 }
 ```
 
@@ -61,15 +61,15 @@ public class MyModConfig {
             .disableHtmlEscaping() // We'll be able to use custom chars without them being saved differently
             .create();
 
-	// Config values
+    // Config values
     public float activationRange = 8.0F;
 
     public boolean show = true;
 
-	public String message = "This is a config guide.";
-	
-	
-	// Reading and saving
+    public String message = "This is a config guide.";
+    
+    
+    // Reading and saving
 
     /**
      * Loads config file.
@@ -79,25 +79,25 @@ public class MyModConfig {
      */
     public static MyModConfig loadConfigFile(File file) {
         MyModConfig config = null;
-		
+        
         if (file.exists()) {
-			// An existing config is present, we should use its values
+            // An existing config is present, we should use its values
             try (BufferedReader fileReader = new BufferedReader(
                     new InputStreamReader(new FileInputStream(file), StandardCharsets.UTF_8)
             )) {
-				// Parses the config file and puts the values into config object
+                // Parses the config file and puts the values into config object
                 config = gson.fromJson(fileReader, MyModConfig.class);
             } catch (IOException e) {
                 throw new RuntimeException("[MyMod] Problem occurred when trying to load config: ", e);
             }
         }
-		// gson.fromJson() can return null if file is empty
-		if (config == null) {
-			config = new MyModConfig();
-		}
-		
-		// Saves the file in order to write new fields if they were added
-		config.saveConfigFile(file);
+        // gson.fromJson() can return null if file is empty
+        if (config == null) {
+            config = new MyModConfig();
+        }
+        
+        // Saves the file in order to write new fields if they were added
+        config.saveConfigFile(file);
         return config;
     }
 
@@ -118,11 +118,11 @@ public class MyModConfig {
 
 Now that we have those new methods, we should use the following code to load the config.
 ```java
-File configFile = new File("./config/my_mod_config.json");
+File configFile = FabricLoader.getInstance().getConfigDir().resolve(“my_mod_config.json”);
 MyModConfig config = MyModConfig.loadConfigFile(configFile);
 
 if(config.show)
-	System.out.println(config.message);
+    System.out.println(config.message);
 
 config.show = false;
 
@@ -134,3 +134,164 @@ config.save(configFile);
 ```
 
 This will automatically create new config file or read the existing one.
+
+
+## Nested classes
+
+Creating nested structures is really simple. All you need to have is another
+static inner class and a new object for it. See the example below.
+
+```java
+public class MyModConfig {
+
+    public float activationRange = 8.0F;
+
+    public boolean show = true;
+
+    public String message = "This is a config guide.";
+    
+    public NestedValues nested = new NestedValues();
+    
+    public static class NestedValues {
+        public String message = "This is a another message.";
+    }
+    
+}
+```
+
+And its json counterpart:
+
+```json
+{
+    "activationRange": 8.0,
+    "show": true,
+    "message": "This is a config guide.",
+    "nested": {
+        "message": "This is a another message."
+    }
+}
+```
+
+
+## Arrays
+
+To create a json array, you can use `ArrayList<>` class from java.
+
+```java
+public class MyModConfig {
+
+    public float activationRange = 8.0F;
+
+    public boolean show = true;
+
+    public String message = "This is a config guide.";
+    
+    public NestedValues nested = new NestedValues();
+    
+    public static class NestedValues {
+        public String message = "This is a another message.";
+    }
+    
+    public ArrayList<String> randomQuestions = new ArrayList<>(Arrays.asList(
+        "Why no forge port?",
+        "When quilt?",
+        "Tiny potato or tiny pumpkin?",
+        "What is minecraft?" // How dare you
+    ));
+}
+```
+
+And its json counterpart:
+
+```json
+{
+    "activationRange": 8.0,
+    "show": true,
+    "message": "This is a config guide.",
+    "nested": {
+        "message": "This is a another message."
+    },
+    "randomQuestions": [
+        "Why no forge port?",
+        "When quilt?",
+        "Tiny potato or tiny pumpkin?",
+        "What is minecraft?"
+    ]
+}
+```
+
+## Naming the fields differently
+
+Json structure doesn't limit us as much as java when it comes to naming fields.
+Luckily, we can overcome this problem by using `@SerializedName` annotation on fields
+to change how they're written in the file.
+
+```java
+public class MyModConfig {
+
+    @SerializedName("activation range")
+    public float activationRange = 8.0F;
+
+    @SerializedName("Show config message.")
+    public boolean show = true;
+
+    @SerializedName("config_message")
+    public String message = "This is a config guide.";
+    
+}
+```
+The above code will result in the following json:
+
+```json
+{
+    "activation range": 8.0,
+    "Show config message.": true,
+    "config_message": "This is a config guide."
+}
+```
+
+## Poor-man's comments
+
+With the above technique we can even add "comments" to our config.
+Sure, they won't be "perfect json5" comments, but ... they'll still
+be useful for the end user. Comments must be unique, as they
+act like json fields.
+
+```java
+public class MyModConfig {
+
+    // Naming comments in style `_comment_` + `field name`
+    @SerializedName("// When to activate feature xyz.")
+    public final String _comment_activationRange = "(default: 8.0)";
+    @SerializedName("activation_range")
+    public float activationRange = 8.0F;
+
+    
+    @SerializedName("// Whether to show config message.")
+    public final String _comment_show = "(default: true)";
+    @SerializedName("show_config_message.")
+    public boolean show = true;
+
+    @SerializedName("// Which message to print out")
+    public final String _comment_message0 = "";
+    @SerializedName("// if above option is enabled")
+    public final String _comment_message1 = "(default: 'This is a config guide.')";
+    @SerializedName("config_message")
+    public String message = "This is a config guide.";
+    
+}
+```
+
+This will be saved as the following json:
+
+```json
+{
+    "// When to activate feature xyz.": "(default: 8.0)",
+    "activation_range": 8.0,
+    "// Whether to show config message.": "(default: true)",
+    "show_config_message.": true,
+    "// Which message to print out": "",
+    "// if above option is enabled": "(default: 'This is a config guide.')",
+    "config_message": "This is a config guide."
+}
+```
